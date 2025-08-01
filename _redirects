@@ -5,4 +5,4 @@
 # /old-page /new-page 301
 
 # Handle 404 errors - serve index.html for SPA routing
-/* /index.html 200 
+# Removed infinite loop rule that was causing issues 
