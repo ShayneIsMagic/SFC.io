@@ -1,8 +1,8 @@
 # Redirect www to non-www for better SEO
-https://www.salesforceconsultants.io/* https://salesforceconsultants.io/:splat 301!
+/www/* /:splat 301
 
 # Redirect old URLs if any (add as needed)
 # /old-page /new-page 301
 
-# Handle 404 errors
-/* /index.html 404 
+# Handle 404 errors - serve index.html for SPA routing
+/* /index.html 200 
