@@ -17,12 +17,45 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    /* Prevent layout shifts */
+    aspect-ratio: attr(width) / attr(height);
 }
 
-/* Optimize fonts for performance */
+/* Optimize fonts for performance - Use system fonts as fallback */
 @font-face {
     font-family: 'Oceanwide Pro';
     font-display: swap;
+    /* Fallback to system fonts if Oceanwide Pro is not available */
+    font-display: fallback;
+}
+
+/* Performance optimizations for better Lighthouse scores */
+/* Reduce layout shifts */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Optimize animations for performance */
+@media (prefers-reduced-motion: no-preference) {
+    .animate-on-scroll {
+        will-change: transform, opacity;
+    }
+}
+
+/* Reduce paint complexity */
+.gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Optimize text rendering */
+body {
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* CSS Variables - Brand Colors & Design System */
@@ -418,12 +451,16 @@ html {
 }
 
 body {
-    font-family: 'Oceanwide Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Oceanwide Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.2;
     color: var(--dark);
     background-color: var(--white);
     overflow-x: hidden;
     font-weight: 400;
+    /* Performance optimizations */
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -434,7 +471,7 @@ body {
 
 /* Typography with Enhanced Spacing */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oceanwide Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Oceanwide Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 700;
     line-height: 0.9;
     margin-bottom: 2.5rem;
@@ -461,7 +498,7 @@ h4 {
 }
 
 p {
-    font-family: 'Oceanwide Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Oceanwide Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     margin-bottom: 2.5rem;
     color: #7f8c8d;
     font-size: clamp(1.1rem, 2vw, 1.5rem);
@@ -479,7 +516,7 @@ p {
     border: none;
     border-radius: var(--border-radius);
     text-decoration: none;
-    font-family: 'Oceanwide Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Oceanwide Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 700;
     font-size: clamp(0.9rem, 1.5vw, 1.1rem);
     transition: var(--transition-slow);
@@ -1970,19 +2007,19 @@ footer {
 /* Additional Mobile Responsiveness Improvements */
 @media (max-width: 1024px) {
     .hero h1 {
-        font-size: clamp(2rem, 4vw, 3rem) !important;
+        font-size: clamp(2.5rem, 6vw, 4rem);
     }
     
     .hero p {
-        font-size: clamp(1rem, 2vw, 1.4rem) !important;
+        font-size: clamp(1rem, 2vw, 1.4rem);
     }
     
     .section-title {
-        font-size: clamp(2rem, 4vw, 3rem) !important;
+        font-size: clamp(2.5rem, 6vw, 4rem);
     }
     
     .section-subtitle {
-        font-size: clamp(1rem, 2vw, 1.3rem) !important;
+        font-size: clamp(1rem, 2vw, 1.3rem);
     }
 }
 
@@ -2038,12 +2075,12 @@ footer {
 @media (max-width: 480px) {
     /* Enhanced mobile typography */
     .hero h1 {
-        font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
+        font-size: clamp(2rem, 6vw, 3rem);
         line-height: 1.2;
     }
     
     .hero p {
-        font-size: clamp(0.9rem, 3vw, 1.2rem) !important;
+        font-size: clamp(1rem, 3vw, 1.3rem);
         line-height: 1.4;
     }
     
