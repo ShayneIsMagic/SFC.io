@@ -797,13 +797,60 @@ header {
     animation: float 3s ease-in-out infinite;
 }
 
+/* Enhanced CTA Buttons with Better Padding and Visibility */
 .cta-buttons {
     display: flex;
     gap: 2rem;
     justify-content: center;
     margin-top: 4rem;
+    margin-bottom: 3rem;
     flex-wrap: wrap;
     animation: slideInFromBottom 1s ease-out 0.6s both;
+}
+
+.cta-buttons .btn-primary,
+.cta-buttons .btn-secondary {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-buttons .btn-primary {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    color: var(--white);
+    border-color: var(--teal);
+}
+
+.cta-buttons .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(58, 175, 170, 0.4);
+    background: linear-gradient(135deg, var(--teal-light) 0%, var(--teal) 100%);
+}
+
+.cta-buttons .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border-color: var(--white);
+    backdrop-filter: blur(10px);
+}
+
+.cta-buttons .btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    border-color: var(--teal);
 }
 
 /* Enhanced Why Different Section with Better Spacing */
@@ -1241,44 +1288,58 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+    
+    .cta-buttons .btn-primary,
+    .cta-buttons .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        padding: 1.1rem 2rem;
+        font-size: 1rem;
     }
     
     .benefits-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
+    }
+    
+    .benefit-item {
+        padding: 3rem 2rem;
     }
     
     .case-study-content {
         grid-template-columns: 1fr;
-        gap: 5rem;
+        gap: 4rem;
     }
     
     .why-different-cta {
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 1.5rem;
     }
     
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 4rem;
+        gap: 3rem;
     }
     
     .why-different {
-        padding: 8rem 0;
+        padding: 6rem 0;
     }
     
     .services {
-        padding: 6rem 0;
+        padding: 5rem 0;
     }
     
     .case-study {
-        padding: 6rem 0;
+        padding: 5rem 0;
     }
     
     .cta-section {
-        padding: 6rem 0;
+        padding: 5rem 0;
     }
 }
 
@@ -1292,10 +1353,45 @@ footer {
         min-height: calc(100vh - 70px);
     }
     
+    .cta-buttons {
+        gap: 1rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
     .cta-buttons .btn-primary,
     .cta-buttons .btn-secondary {
         width: 100%;
-        text-align: center;
+        max-width: 280px;
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+        min-width: auto;
+    }
+    
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .process-step {
+        padding: 1.8rem 1.2rem;
+    }
+    
+    .process-step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .process-step h3 {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .process-step p {
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
     
     .container {
@@ -1304,6 +1400,23 @@ footer {
     
     .header-content {
         padding: 0 1rem;
+    }
+    
+    .benefit-item {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .benefit-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .benefit-item h3 {
+        font-size: 1.2rem;
+    }
+    
+    .benefit-item p {
+        font-size: 0.95rem;
     }
 } 
 
@@ -1644,5 +1757,299 @@ footer {
     
     .search-result-content {
         font-size: 0.85rem;
+    }
+} 
+
+/* Enhanced Process Grid Mobile Responsiveness */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.process-step {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: fadeInUp 0.8s ease-out both;
+    position: relative;
+    overflow: hidden;
+}
+
+.process-step-number {
+    width: 70px;
+    height: 70px;
+    background: var(--teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--white);
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 0 0 rgba(58, 175, 170, 0.7);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.process-step h3 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.process-step p {
+    color: rgba(255,255,255,0.9);
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.process-step-highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--teal), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.process-step:hover .process-step-highlight {
+    transform: translateX(100%);
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .process-step {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .process-step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .process-step h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .process-step p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-item {
+        width: 100px !important;
+        height: 50px !important;
+    }
+    
+    .logo-stream {
+        gap: 2rem !important;
+        animation-duration: 20s !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-item {
+        width: 80px !important;
+        height: 40px !important;
+    }
+    
+    .logo-stream {
+        gap: 1.5rem !important;
+        animation-duration: 15s !important;
+    }
+} 
+
+/* Additional Mobile Responsiveness Improvements */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: clamp(2rem, 4vw, 3rem) !important;
+    }
+    
+    .hero p {
+        font-size: clamp(1rem, 2vw, 1.4rem) !important;
+    }
+    
+    .section-title {
+        font-size: clamp(2rem, 4vw, 3rem) !important;
+    }
+    
+    .section-subtitle {
+        font-size: clamp(1rem, 2vw, 1.3rem) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Improved touch targets for mobile */
+    .btn-primary, .btn-secondary, .btn-modern {
+        min-height: 44px;
+        padding: 1rem 2rem;
+    }
+    
+    /* Better spacing for mobile */
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+    
+    .hero h1 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero p {
+        margin-bottom: 2rem;
+    }
+    
+    /* Improved card layouts */
+    .benefit-item {
+        margin-bottom: 2rem;
+    }
+    
+    /* Better testimonial layout */
+    .testimonial-card {
+        padding: 2.5rem 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Improved process step layout */
+    .process-step {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Better leader card layout */
+    .leader-card {
+        padding: 3rem 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Improved why card layout */
+    .why-card {
+        padding: 2.5rem 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Enhanced mobile typography */
+    .hero h1 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
+        line-height: 1.2;
+    }
+    
+    .hero p {
+        font-size: clamp(0.9rem, 3vw, 1.2rem) !important;
+        line-height: 1.4;
+    }
+    
+    /* Better button sizing for small screens */
+    .cta-buttons .btn-primary,
+    .cta-buttons .btn-secondary {
+        padding: 1rem 1.5rem;
+        font-size: 0.9rem;
+        min-height: 48px;
+    }
+    
+    /* Improved spacing for very small screens */
+    .hero-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    /* Better card padding for small screens */
+    .benefit-item,
+    .testimonial-card,
+    .leader-card,
+    .why-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    /* Improved process step sizing */
+    .process-step {
+        padding: 1.5rem 1rem;
+    }
+    
+    .process-step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .process-step h3 {
+        font-size: 0.95rem;
+    }
+    
+    .process-step p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Enhanced accessibility for mobile */
+@media (max-width: 768px) {
+    /* Ensure sufficient contrast and touch targets */
+    .nav-dropdown a {
+        padding: 1rem 1.5rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Better focus states for mobile */
+    .btn-primary:focus,
+    .btn-secondary:focus,
+    .btn-modern:focus {
+        outline: 2px solid var(--teal);
+        outline-offset: 2px;
+    }
+    
+    /* Improved readability */
+    .benefit-item h3,
+    .testimonial-card blockquote,
+    .leader-card h3,
+    .why-card h3 {
+        line-height: 1.3;
+    }
+}
+
+/* Landscape orientation improvements */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding-top: 60px;
+    }
+    
+    .hero-container {
+        min-height: calc(100vh - 60px);
+    }
+    
+    .cta-buttons {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    
+    .cta-buttons .btn-primary,
+    .cta-buttons .btn-secondary {
+        width: auto;
+        min-width: 150px;
     }
 } 
