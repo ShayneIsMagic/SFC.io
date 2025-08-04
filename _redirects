@@ -1,8 +1,26 @@
 # Redirect www to non-www for better SEO
 /www/* /:splat 301
 
-# Redirect old URLs if any (add as needed)
-# /old-page /new-page 301
+# ===== SEO-OPTIMIZED URL REWRITING =====
+# Main pages - SEO-friendly URLs
+/salesforce-clients-partners /clients.html 200
+/salesforce-consulting-services /services.html 200
+/contact-salesforce-consultants /contact.html 200
+/salesforce-faq-questions /faq.html 200
+/salesforce-expertise-certifications /expertise.html 200
+/salesforce-success-stories-case-studies /success-stories.html 200
+
+# Service-specific pages
+/salesforce-implementation-recovery /services/implementation-recovery.html 200
+
+# ===== 301 REDIRECTS FOR OLD URLS =====
+# Redirect old URLs to new SEO-friendly URLs
+/clients.html /salesforce-clients-partners 301
+/services.html /salesforce-consulting-services 301
+/contact.html /contact-salesforce-consultants 301
+/faq.html /salesforce-faq-questions 301
+/expertise.html /salesforce-expertise-certifications 301
+/success-stories.html /salesforce-success-stories-case-studies 301
 
 # Handle 404 errors - serve index.html for SPA routing
-# Removed infinite loop rule that was causing issues 
+/* /index.html 404 

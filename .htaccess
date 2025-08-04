@@ -48,6 +48,27 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
+# ===== SEO-OPTIMIZED URL REWRITING =====
+# Main pages - SEO-friendly URLs
+RewriteRule ^salesforce-clients-partners/?$ clients.html [L]
+RewriteRule ^salesforce-consulting-services/?$ services.html [L]
+RewriteRule ^contact-salesforce-consultants/?$ contact.html [L]
+RewriteRule ^salesforce-faq-questions/?$ faq.html [L]
+RewriteRule ^salesforce-expertise-certifications/?$ expertise.html [L]
+RewriteRule ^salesforce-success-stories-case-studies/?$ success-stories.html [L]
+
+# Service-specific pages
+RewriteRule ^salesforce-implementation-recovery/?$ services/implementation-recovery.html [L]
+
+# ===== 301 REDIRECTS FOR OLD URLS =====
+# Redirect old URLs to new SEO-friendly URLs
+RewriteRule ^clients\.html$ /salesforce-clients-partners [R=301,L]
+RewriteRule ^services\.html$ /salesforce-consulting-services [R=301,L]
+RewriteRule ^contact\.html$ /contact-salesforce-consultants [R=301,L]
+RewriteRule ^faq\.html$ /salesforce-faq-questions [R=301,L]
+RewriteRule ^expertise\.html$ /salesforce-expertise-certifications [R=301,L]
+RewriteRule ^success-stories\.html$ /salesforce-success-stories-case-studies [R=301,L]
+
 # Custom error pages
 ErrorDocument 404 /404.html
 ErrorDocument 500 /500.html 
