@@ -135,16 +135,52 @@ function fixCardColors() {
     });
 }
 
-// Run color fixing on page load and after any dynamic content changes
-document.addEventListener('DOMContentLoaded', function() {
+// Main initialization function
+function initializeSite() {
+    console.log('🚀 Initializing SalesforceConsultants.io...');
+    
+    // Initialize color system
     fixAllColorContrastIssues();
     
-    // Also run after a short delay to catch any dynamic content
-    setTimeout(fixAllColorContrastIssues, 1000);
+    // Initialize search system
+    initializeSearch();
     
-    // Run periodically to catch any new content
+    // Initialize mobile menu
+    handleMobileMenu();
+    
+    // Initialize lazy loading
+    lazyLoadImages();
+    
+    // Initialize form validation
+    validateForm();
+    
+    // Initialize form handling
+    initializeFormHandling();
+    
+    // Initialize smooth scrolling
+    initializeSmoothScrolling();
+    
+    // Initialize animations
+    initializeAnimations();
+    
+    // Initialize stats observer
+    initializeStatsObserver();
+    
+    // Initialize performance optimizations
+    initializePerformanceOptimizations();
+    
+    // Initialize bio modal
+    initializeBioModal();
+    
+    // Set up periodic color fixing
+    setTimeout(fixAllColorContrastIssues, 1000);
     setInterval(fixAllColorContrastIssues, 5000);
-});
+    
+    console.log('✅ Site initialization complete');
+}
+
+// Single DOMContentLoaded listener
+document.addEventListener('DOMContentLoaded', initializeSite);
 
 // Service Worker Registration
 if ('serviceWorker' in navigator) {
@@ -784,10 +820,7 @@ function toggleReadMore() {
 }
 
 // Smooth scrolling for anchor links
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize search system
-    initializeSearch();
-    
+function initializeSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
     
     links.forEach(link => {
@@ -820,7 +853,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-});
+}
 
 // Header Scroll Effect
 window.addEventListener('scroll', function() {
@@ -854,7 +887,7 @@ const observer = new IntersectionObserver(function(entries) {
 }, observerOptions);
 
 // Observe elements for animation
-document.addEventListener('DOMContentLoaded', function() {
+function initializeAnimations() {
     const animatedElements = document.querySelectorAll('.service-card, .feature-card, .cert-category, .testimonial');
     
     animatedElements.forEach(el => {
@@ -863,10 +896,10 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
-});
+}
 
 // Form Handling
-document.addEventListener('DOMContentLoaded', function() {
+function initializeFormHandling() {
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
@@ -902,7 +935,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 2000);
         });
     }
-});
+}
 
 // Notification system
 function showNotification(message, type = 'info') {
@@ -1022,12 +1055,12 @@ const statsObserver = new IntersectionObserver(function(entries) {
     });
 }, { threshold: 0.5 });
 
-document.addEventListener('DOMContentLoaded', function() {
+function initializeStatsObserver() {
     const statsSection = document.querySelector('.hero-stats');
     if (statsSection) {
         statsObserver.observe(statsSection);
     }
-});
+}
 
 // Mobile Menu Responsive Behavior
 function handleMobileMenu() {
@@ -1078,8 +1111,7 @@ function handleMobileMenu() {
     }
 }
 
-// Initialize mobile menu
-document.addEventListener('DOMContentLoaded', handleMobileMenu);
+
 
 // Form Validation
 function validateForm() {
@@ -1108,8 +1140,7 @@ function validateForm() {
     return isValid;
 }
 
-// Add form validation to submit
-document.addEventListener('DOMContentLoaded', function() {
+function initializeFormValidation() {
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -1119,7 +1150,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-});
+}
 
 // Enhanced Lazy Loading for Images
 function lazyLoadImages() {
@@ -1183,17 +1214,10 @@ function optimizeCSSLoading() {
     }
 }
 
-// Initialize search system
-document.addEventListener('DOMContentLoaded', initializeSearch);
-
-// Initialize lazy loading
-document.addEventListener('DOMContentLoaded', lazyLoadImages);
-
-// Initialize performance optimizations
-document.addEventListener('DOMContentLoaded', function() {
+function initializePerformanceOptimizations() {
     preloadCriticalImages();
     optimizeCSSLoading();
-});
+}
 
 // Performance Optimization: Debounce scroll events
 function debounce(func, wait) {
@@ -1269,8 +1293,7 @@ function closeBioModal() {
     }, 300);
 }
 
-// Close modal when clicking outside
-document.addEventListener('DOMContentLoaded', function() {
+function initializeBioModal() {
     const modal = document.getElementById('bioModal');
     if (modal) {
         modal.addEventListener('click', function(e) {
@@ -1286,7 +1309,7 @@ document.addEventListener('DOMContentLoaded', function() {
             closeBioModal();
         }
     });
-});
+}
 
 // Export functions for global access (if needed)
 window.toggleMobileMenu = toggleMobileMenu;

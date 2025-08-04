@@ -49,7 +49,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Oceanwide+Pro:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Critical Resources Preload -->
-    <link rel="preload" href="/styles.css" as="style">
     <link rel="preload" href="assets/logos/Salesforce_Consulting_Logo.svg" as="image" type="image/svg+xml">
     <link rel="preload" href="assets/SalesforceConsultants-Graphic.png" as="image">
     
@@ -78,42 +77,21 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/styles.css?v=2024.1.15">
     
-    <!-- Cache Busting Script -->
-    <script>
-        // Force cache refresh for CSS and JS files
-        if (window.location.search.indexOf('cache=clear') === -1) {
-            const timestamp = new Date().getTime();
-            const links = document.querySelectorAll('link[href*="styles.css"], script[src*="script.js"]');
-            links.forEach(link => {
-                if (link.href) {
-                    link.href = link.href.split('?')[0] + '?v=2024.1.15&t=' + timestamp;
-                } else if (link.src) {
-                    link.src = link.src.split('?')[0] + '?v=2024.1.15&t=' + timestamp;
-                }
-            });
-        }
-    </script>
+
     
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZNLKDLFEC"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID', {
+      gtag('config', 'G-8ZNLKDLFEC', {
         'custom_map': {
           'dimension1': 'service_type',
           'dimension2': 'client_type'
         }
       });
     </script>
-    
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
