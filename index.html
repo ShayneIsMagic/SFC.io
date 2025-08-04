@@ -76,7 +76,23 @@
     <link rel="manifest" href="/site.webmanifest">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css?v=2024.1.13">
+    
+    <!-- Cache Busting Script -->
+    <script>
+        // Force cache refresh for CSS and JS files
+        if (window.location.search.indexOf('cache=clear') === -1) {
+            const timestamp = new Date().getTime();
+            const links = document.querySelectorAll('link[href*="styles.css"], script[src*="script.js"]');
+            links.forEach(link => {
+                if (link.href) {
+                    link.href = link.href.split('?')[0] + '?v=' + timestamp;
+                } else if (link.src) {
+                    link.src = link.src.split('?')[0] + '?v=' + timestamp;
+                }
+            });
+        }
+    </script>
     
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -1374,6 +1390,6 @@
         </div>
     </div>
 
-    <script src="/script.js"></script>
+    <script src="/script.js?v=2024.1.13"></script>
 </body>
 </html> 
