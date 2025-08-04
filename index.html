@@ -76,7 +76,7 @@
     <link rel="manifest" href="/site.webmanifest">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/styles.css?v=2024.1.14">
+    <link rel="stylesheet" href="/styles.css?v=2024.1.15">
     
     <!-- Cache Busting Script -->
     <script>
@@ -86,9 +86,9 @@
             const links = document.querySelectorAll('link[href*="styles.css"], script[src*="script.js"]');
             links.forEach(link => {
                 if (link.href) {
-                    link.href = link.href.split('?')[0] + '?v=2024.1.14&t=' + timestamp;
+                    link.href = link.href.split('?')[0] + '?v=2024.1.15&t=' + timestamp;
                 } else if (link.src) {
-                    link.src = link.src.split('?')[0] + '?v=2024.1.14&t=' + timestamp;
+                    link.src = link.src.split('?')[0] + '?v=2024.1.15&t=' + timestamp;
                 }
             });
         }
@@ -1390,6 +1390,6 @@
         </div>
     </div>
 
-    <script src="/script.js?v=2024.1.14"></script>
+    <script src="/script.js?v=2024.1.15"></script>
 </body>
 </html> 
