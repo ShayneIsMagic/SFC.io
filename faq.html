@@ -59,7 +59,24 @@
     <meta name="msapplication-TileColor" content="#3AAEAA">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Font Override for FAQ Page -->
+    <style>
+        * {
+            font-family: 'Oceanwide Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            text-transform: none !important;
+        }
+        body, h1, h2, h3, h4, h5, h6, p, div, span, a, li, ul, ol, button, input, textarea {
+            font-family: 'Oceanwide Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            text-transform: none !important;
+        }
+        .btn-primary, .btn-secondary, .btn-modern {
+            border-radius: 12px !important;
+            font-weight: 700 !important;
+            text-transform: none !important;
+        }
+    </style>
     
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -322,11 +339,11 @@
             </a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="success-stories.html">Success Stories</a></li>
-                    <li><a href="expertise.html">Expertise</a></li>
-                    <li><a href="clients.html">Clients</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="/salesforce-consulting-services">Services</a></li>
+                        <li><a href="/salesforce-success-stories-case-studies">Success Stories</a></li>
+                        <li><a href="/salesforce-expertise-certifications">Expertise</a></li>
+                        <li><a href="/salesforce-clients-partners">Clients</a></li>
+                        <li><a href="/contact-salesforce-consultants">Contact</a></li>
                 </ul>
             </nav>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
@@ -336,11 +353,11 @@
             </button>
         </div>
         <div class="nav-dropdown" id="nav-dropdown">
-            <a href="services.html">Services</a>
-            <a href="success-stories.html">Success Stories</a>
-            <a href="expertise.html">Expertise</a>
-            <a href="clients.html">Clients</a>
-            <a href="contact.html">Contact</a>
+                                <a href="/salesforce-consulting-services">Services</a>
+                    <a href="/salesforce-success-stories-case-studies">Success Stories</a>
+                    <a href="/salesforce-expertise-certifications">Expertise</a>
+                    <a href="/salesforce-clients-partners">Clients</a>
+                    <a href="/contact-salesforce-consultants">Contact</a>
         </div>
     </header>
 
@@ -582,8 +599,8 @@
                 <h2>Still Have Questions?</h2>
                 <p>Our certified Salesforce consultants are here to help. Get personalized answers and expert guidance.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn-primary">Contact Our Experts</a>
-                    <a href="contact.html" class="btn-secondary">Schedule Free Consultation</a>
+                    <a href="/contact-salesforce-consultants" class="btn-primary">Contact Our Experts</a>
+                    <a href="/contact-salesforce-consultants" class="btn-secondary">Schedule Free Consultation</a>
                 </div>
             </div>
         </section>
@@ -607,23 +624,23 @@
                 <div class="footer-section">
                     <h3>Our Services</h3>
                     <ul>
-                        <li><a href="services.html">Custom Salesforce Development</a></li>
-                        <li><a href="services.html">Salesforce Implementation</a></li>
-                        <li><a href="services.html">Salesforce Training</a></li>
-                        <li><a href="services.html">Salesforce Integrations</a></li>
-                        <li><a href="services.html">Salesforce Automation</a></li>
-                        <li><a href="services.html">Salesforce Migrations</a></li>
+                        <li><a href="/salesforce-consulting-services">Custom Salesforce Development</a></li>
+                        <li><a href="/salesforce-consulting-services">Salesforce Implementation</a></li>
+                        <li><a href="/salesforce-consulting-services">Salesforce Training</a></li>
+                        <li><a href="/salesforce-consulting-services">Salesforce Integrations</a></li>
+                        <li><a href="/salesforce-consulting-services">Salesforce Automation</a></li>
+                        <li><a href="/salesforce-consulting-services">Salesforce Migrations</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Resources</h3>
                     <ul>
-                        <li><a href="success-stories.html">Success Stories</a></li>
-                        <li><a href="expertise.html">Expertise</a></li>
-                        <li><a href="clients.html">Our Clients</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="/salesforce-success-stories-case-studies">Success Stories</a></li>
+                        <li><a href="/salesforce-expertise-certifications">Expertise</a></li>
+                        <li><a href="/salesforce-clients-partners">Our Clients</a></li>
+                        <li><a href="/salesforce-faq-questions">FAQ</a></li>
+                        <li><a href="/contact-salesforce-consultants">Contact Us</a></li>
                     </ul>
                 </div>
                 
@@ -647,7 +664,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
     <script>
         function toggleFAQ(element) {
             const answer = element.nextElementSibling;

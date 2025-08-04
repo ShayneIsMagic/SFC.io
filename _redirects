@@ -2,7 +2,7 @@
 /www/* /:splat 301
 
 # ===== SEO-OPTIMIZED URL REWRITING =====
-# Main pages - SEO-friendly URLs
+# Main pages - SEO-friendly URLs (using absolute paths)
 /salesforce-clients-partners /clients.html 200
 /salesforce-consulting-services /services.html 200
 /contact-salesforce-consultants /contact.html 200
@@ -12,6 +12,21 @@
 
 # Service-specific pages
 /salesforce-implementation-recovery /services/implementation-recovery.html 200
+
+# ===== ASSET REWRITING FOR NEW URLS =====
+# Ensure CSS and JS files load correctly from new URLs
+/salesforce-clients-partners/styles.css /styles.css 200
+/salesforce-clients-partners/script.js /script.js 200
+/salesforce-consulting-services/styles.css /styles.css 200
+/salesforce-consulting-services/script.js /script.js 200
+/contact-salesforce-consultants/styles.css /styles.css 200
+/contact-salesforce-consultants/script.js /script.js 200
+/salesforce-faq-questions/styles.css /styles.css 200
+/salesforce-faq-questions/script.js /script.js 200
+/salesforce-expertise-certifications/styles.css /styles.css 200
+/salesforce-expertise-certifications/script.js /script.js 200
+/salesforce-success-stories-case-studies/styles.css /styles.css 200
+/salesforce-success-stories-case-studies/script.js /script.js 200
 
 # ===== 301 REDIRECTS FOR OLD URLS =====
 # Redirect old URLs to new SEO-friendly URLs
