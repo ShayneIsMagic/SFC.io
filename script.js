@@ -33,11 +33,14 @@ let currentSearchIndex = -1;
 
 // Initialize search system
 function initializeSearch() {
+    console.log('Initializing search system...');
+    
     // Create search modal
     createSearchModal();
     
     // Add click handlers to search icons
     const searchIcons = document.querySelectorAll('.search-icon');
+    console.log('Found search icons:', searchIcons.length);
     searchIcons.forEach(icon => {
         icon.addEventListener('click', openSearchModal);
     });
@@ -52,6 +55,8 @@ function initializeSearch() {
     
     // Load search data
     loadSearchData();
+    
+    console.log('Search system initialized successfully');
 }
 
 // Create search modal
@@ -100,6 +105,7 @@ function createSearchModal() {
 
 // Open search modal
 function openSearchModal() {
+    console.log('Opening search modal...');
     if (searchModal) {
         searchModal.style.display = 'block';
         searchInput.focus();
@@ -119,6 +125,9 @@ function openSearchModal() {
                 </div>
             </div>
         `;
+        console.log('Search modal opened successfully');
+    } else {
+        console.error('Search modal not found!');
     }
 }
 
@@ -170,6 +179,7 @@ function updateSearchSelection(results) {
 
 // Load search data from all pages
 function loadSearchData() {
+    console.log('Loading search data...');
     searchData = [
         // Home page content
         {
@@ -314,13 +324,171 @@ function loadSearchData() {
             url: 'services/implementation-recovery.html',
             category: 'Services',
             tags: ['recovery', 'failed', 'stalled', 'projects']
+        },
+        
+        // Partner content
+        {
+            title: 'Trusted by Industry Leaders',
+            content: 'Our partners and clients across various industries trust us with their Salesforce transformation',
+            url: 'index.html#partners',
+            category: 'Partners',
+            tags: ['partners', 'industry', 'leaders', 'trusted']
+        },
+        {
+            title: 'Employer Partners',
+            content: 'Organizations that trust us with their Salesforce transformation and implementation',
+            url: 'clients.html',
+            category: 'Partners',
+            tags: ['employer', 'partners', 'organizations', 'trust']
+        },
+        {
+            title: 'Salesforce Consulting Partnership',
+            content: 'Strategic Salesforce consulting partnerships that deliver results and build long-term relationships',
+            url: 'clients.html',
+            category: 'Partners',
+            tags: ['consulting', 'partnership', 'strategic', 'relationships']
+        },
+        {
+            title: 'Partner Logos and Testimonials',
+            content: 'See our partner logos and read testimonials from organizations we\'ve helped transform',
+            url: 'clients.html',
+            category: 'Partners',
+            tags: ['logos', 'testimonials', 'transform', 'organizations']
+        },
+        {
+            title: 'DevPipeline Partnership',
+            content: 'A DevPipeline Division - This partnership allows us to provide comprehensive Salesforce solutions',
+            url: 'index.html',
+            category: 'Partners',
+            tags: ['devpipeline', 'partnership', 'comprehensive', 'solutions']
+        },
+        {
+            title: 'Salesforce Implementation Partner',
+            content: 'Professional Salesforce implementation partner services for businesses and nonprofits',
+            url: 'services.html',
+            category: 'Services',
+            tags: ['implementation', 'partner', 'professional', 'services']
+        },
+        
+        // Chamber of Commerce content
+        {
+            title: 'LA Chamber of Commerce Success Story',
+            content: 'How we transformed LA Chamber with comprehensive Salesforce solutions and training',
+            url: 'success-stories.html',
+            category: 'Success Stories',
+            tags: ['chamber', 'commerce', 'la', 'training', 'success']
+        },
+        {
+            title: 'Chambers of Commerce Solutions',
+            content: 'Multi-departmental Salesforce solutions for Chambers of Commerce and business associations',
+            url: 'services.html',
+            category: 'Services',
+            tags: ['chamber', 'commerce', 'multi-departmental', 'associations']
+        },
+        
+        // Nonprofit content
+        {
+            title: 'Nonprofit Salesforce Solutions',
+            content: 'Specialized Salesforce Nonprofit Cloud and NPSP solutions for mission-driven organizations',
+            url: 'services.html',
+            category: 'Services',
+            tags: ['nonprofit', 'npsp', 'mission', 'organizations']
+        },
+        {
+            title: 'Nonprofit Salesforce Implementation',
+            content: 'Nonprofit Salesforce implementation that increased donor retention by 35%',
+            url: 'success-stories.html',
+            category: 'Success Stories',
+            tags: ['nonprofit', 'donor', 'retention', 'implementation']
+        },
+        
+        // Client content
+        {
+            title: 'Client Success Stories',
+            content: 'Real results from real organizations. See how our Salesforce consulting services have transformed businesses and nonprofits',
+            url: 'success-stories.html',
+            category: 'Success Stories',
+            tags: ['client', 'success', 'stories', 'results', 'organizations']
+        },
+        {
+            title: 'Client Testimonials',
+            content: 'Hear from our satisfied clients about their Salesforce transformation and success',
+            url: 'expertise.html',
+            category: 'Expertise',
+            tags: ['client', 'testimonials', 'satisfied', 'transformation']
+        },
+        {
+            title: 'Client Satisfaction',
+            content: '100% client satisfaction rate with proven results across all implementations',
+            url: 'success-stories.html',
+            category: 'Success Stories',
+            tags: ['client', 'satisfaction', 'results', 'implementations']
+        },
+        
+        // ROI content
+        {
+            title: 'Salesforce ROI Calculator',
+            content: 'Calculate your Salesforce ROI with our proven methodologies that deliver measurable ROI for businesses and nonprofits',
+            url: 'index.html',
+            category: 'Services',
+            tags: ['roi', 'calculator', 'measurable', 'methodologies']
+        },
+        {
+            title: '6-Month ROI Achievement',
+            content: 'Return on investment achieved within 6 months of Salesforce implementation',
+            url: 'success-stories.html',
+            category: 'Success Stories',
+            tags: ['roi', '6-month', 'investment', 'implementation']
+        },
+        
+        // Training content
+        {
+            title: 'Salesforce Training Programs',
+            content: 'Comprehensive Salesforce training programs for administrators and end users with certification preparation',
+            url: 'services.html#training',
+            category: 'Services',
+            tags: ['training', 'programs', 'administrators', 'certification']
+        },
+        {
+            title: 'Salesforce Admin Training',
+            content: 'Expert-led Salesforce administrator training with certification preparation and ongoing support',
+            url: 'clients.html',
+            category: 'Services',
+            tags: ['training', 'admin', 'certification', 'support']
+        },
+        {
+            title: 'User Training & Adoption',
+            content: 'Comprehensive user training and change management support for successful Salesforce adoption',
+            url: 'index.html',
+            category: 'Services',
+            tags: ['training', 'user', 'adoption', 'change-management']
+        },
+        
+        // Certification content
+        {
+            title: '15+ Salesforce Certifications',
+            content: 'Our team holds 15+ Salesforce certifications across all major Salesforce products and clouds',
+            url: 'expertise.html',
+            category: 'Expertise',
+            tags: ['certifications', 'salesforce', 'products', 'clouds']
+        },
+        {
+            title: 'Salesforce Certification Training',
+            content: 'Salesforce certification preparation and training for administrators and developers',
+            url: 'services.html',
+            category: 'Services',
+            tags: ['certification', 'training', 'preparation', 'administrators']
         }
     ];
+    console.log('Search data loaded successfully. Total items:', searchData.length);
+    console.log('Sample search data:', searchData.slice(0, 3));
 }
 
 // Perform search
 function performSearch() {
     const query = searchInput.value.trim().toLowerCase();
+    console.log('Search query:', query);
+    console.log('Search data length:', searchData.length);
     
     if (query.length < 2) {
         searchResults.innerHTML = `
@@ -338,9 +506,14 @@ function performSearch() {
     
     const results = searchData.filter(item => {
         const searchText = `${item.title} ${item.content} ${item.tags.join(' ')}`.toLowerCase();
-        return searchText.includes(query);
+        const matches = searchText.includes(query);
+        if (matches) {
+            console.log('Match found:', item.title);
+        }
+        return matches;
     });
     
+    console.log('Search results count:', results.length);
     displaySearchResults(results, query);
 }
 
@@ -802,26 +975,79 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Lazy Loading for Images (when added)
+// Enhanced Lazy Loading for Images
 function lazyLoadImages() {
     const images = document.querySelectorAll('img[data-src]');
     
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
         });
-    });
-    
-    images.forEach(img => imageObserver.observe(img));
+        
+        images.forEach(img => imageObserver.observe(img));
+    } else {
+        // Fallback for older browsers
+        images.forEach(img => {
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+        });
+    }
 }
+
+// Performance optimization: Preload critical images
+function preloadCriticalImages() {
+    const criticalImages = [
+        'assets/logos/Salesforce_Consulting_Logo.svg',
+        'assets/Jason Fletcher Profile.JPG',
+        'assets/Shayne Roy Profile.png'
+    ];
+    
+    criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+    });
+}
+
+// Performance optimization: Optimize CSS loading
+function optimizeCSSLoading() {
+    // Add critical CSS inline if needed
+    const criticalCSS = `
+        .hero-section { opacity: 1; }
+        .leader-card { opacity: 1; }
+        .process-step { opacity: 1; }
+    `;
+    
+    if (document.readyState === 'loading') {
+        const style = document.createElement('style');
+        style.textContent = criticalCSS;
+        document.head.appendChild(style);
+    }
+}
+
+// Initialize search system
+document.addEventListener('DOMContentLoaded', initializeSearch);
 
 // Initialize lazy loading
 document.addEventListener('DOMContentLoaded', lazyLoadImages);
+
+// Initialize performance optimizations
+document.addEventListener('DOMContentLoaded', function() {
+    preloadCriticalImages();
+    optimizeCSSLoading();
+});
 
 // Performance Optimization: Debounce scroll events
 function debounce(func, wait) {
@@ -855,8 +1081,73 @@ Get started: https://salesforceconsultants.io
 Phone: (385) 309-0807
 `);
 
+// Bio Modal Functions
+function openBioModal(person) {
+    const modal = document.getElementById('bioModal');
+    const jasonBio = document.getElementById('jasonBio');
+    const shayneBio = document.getElementById('shayneBio');
+    
+    // Hide all bio content first
+    jasonBio.style.display = 'none';
+    shayneBio.style.display = 'none';
+    
+    // Show the appropriate bio content
+    if (person === 'jason') {
+        jasonBio.style.display = 'block';
+    } else if (person === 'shayne') {
+        shayneBio.style.display = 'block';
+    }
+    
+    // Show the modal
+    modal.style.display = 'block';
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+    
+    // Add animation
+    modal.style.opacity = '0';
+    setTimeout(() => {
+        modal.style.opacity = '1';
+        modal.style.transition = 'opacity 0.3s ease';
+    }, 10);
+}
+
+function closeBioModal() {
+    const modal = document.getElementById('bioModal');
+    
+    // Hide the modal
+    modal.style.opacity = '0';
+    setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }, 300);
+}
+
+// Close modal when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('bioModal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeBioModal();
+            }
+        });
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeBioModal();
+        }
+    });
+});
+
 // Export functions for global access (if needed)
 window.toggleMobileMenu = toggleMobileMenu;
 window.showNotification = showNotification;
+window.openSearchModal = openSearchModal;
+window.closeSearchModal = closeSearchModal;
+window.openBioModal = openBioModal;
+window.closeBioModal = closeBioModal;
 
  
