@@ -1015,6 +1015,23 @@ header {
     margin-bottom: 5rem;
 }
 
+/* Mobile-first responsive grid */
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
 .benefit-item {
     text-align: center;
     padding: 4rem 2.5rem;
@@ -1139,6 +1156,49 @@ header {
     gap: 8rem;
 }
 
+/* Mobile responsiveness for services */
+@media (max-width: 768px) {
+    .services-grid {
+        gap: 4rem;
+    }
+    
+    .service-item {
+        padding: 3rem 0;
+    }
+    
+    .service-features li {
+        padding: 1rem 0;
+        padding-left: 2.5rem;
+        font-size: 1rem;
+    }
+    
+    .service-features li::before {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid {
+        gap: 3rem;
+    }
+    
+    .service-item {
+        padding: 2.5rem 0;
+    }
+    
+    .service-features li {
+        padding: 0.8rem 0;
+        padding-left: 2rem;
+        font-size: 0.95rem;
+    }
+    
+    .service-features li::before {
+        width: 10px;
+        height: 10px;
+    }
+}
+
 .service-item {
     padding: 6rem 0;
     border-bottom: 3px solid var(--teal);
@@ -1223,6 +1283,58 @@ header {
     grid-template-columns: 1fr 1fr;
     gap: 8rem;
     align-items: center;
+}
+
+/* Mobile responsiveness for case study */
+@media (max-width: 768px) {
+    .case-study-content {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
+    .case-study {
+        padding: 4rem 0;
+    }
+    
+    .challenge, .solution, .results {
+        margin-bottom: 3rem;
+    }
+    
+    .results-list li {
+        padding: 1rem 0;
+        padding-left: 2.5rem;
+        font-size: 1rem;
+    }
+    
+    .results-list li::before {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .case-study-content {
+        gap: 3rem;
+    }
+    
+    .case-study {
+        padding: 3rem 0;
+    }
+    
+    .challenge, .solution, .results {
+        margin-bottom: 2.5rem;
+    }
+    
+    .results-list li {
+        padding: 0.8rem 0;
+        padding-left: 2rem;
+        font-size: 0.95rem;
+    }
+    
+    .results-list li::before {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 .case-study-text h2 {
@@ -1977,6 +2089,34 @@ footer {
     
     .process-step p {
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+    
+    .process-step {
+        padding: 2rem 1.2rem;
+    }
+    
+    .process-step-number {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .process-step h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .process-step p {
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
 }
 
