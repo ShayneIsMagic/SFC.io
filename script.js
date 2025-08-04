@@ -1,5 +1,151 @@
 // SalesforceConsultants.io - Main JavaScript
 
+// ===== CLEAR COLOR ALTERNATING SYSTEM =====
+function fixAllColorContrastIssues() {
+    console.log('🔧 Applying clear color alternating system...');
+    
+    // Get all elements with text content, excluding navbar elements
+    const allElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, div, span, a, li, td, th');
+    
+    allElements.forEach(element => {
+        // Skip navbar elements
+        if (isNavbarElement(element)) {
+            return;
+        }
+        
+        const computedStyle = window.getComputedStyle(element);
+        const backgroundColor = computedStyle.backgroundColor;
+        
+        // Skip if no background color or transparent
+        if (!backgroundColor || backgroundColor === 'rgba(0, 0, 0, 0)' || backgroundColor === 'transparent') {
+            return;
+        }
+        
+        // Check if background is light or dark
+        const isLightBackground = isLightColor(backgroundColor);
+        
+        // Apply clear alternating pattern
+        if (isLightBackground) {
+            // Light background = black text
+            element.style.color = 'var(--dark)';
+        } else {
+            // Dark background = white text
+            element.style.color = 'var(--white)';
+        }
+    });
+    
+    // Special handling for specific sections
+    fixProcessStepColors();
+    fixCardColors();
+    
+    console.log('✅ Clear color alternating system applied');
+}
+
+function isNavbarElement(element) {
+    // Check if element is part of the navbar
+    return element.closest('header') !== null ||
+           element.closest('.main-nav') !== null ||
+           element.closest('.nav-icons') !== null ||
+           element.closest('.nav-dropdown') !== null ||
+           element.closest('.share-dropdown') !== null ||
+           element.closest('.share-menu') !== null ||
+           element.closest('.mobile-menu-btn') !== null ||
+           element.closest('.logo') !== null ||
+           element.closest('.nav-icon') !== null;
+}
+
+function isLightColor(color) {
+    // Convert color to RGB values
+    const rgb = parseColor(color);
+    if (!rgb) return false;
+    
+    // Calculate luminance
+    const luminance = (0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b) / 255;
+    return luminance > 0.5;
+}
+
+function parseColor(color) {
+    // Handle rgba format
+    const rgbaMatch = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*[\d.]+)?\)/);
+    if (rgbaMatch) {
+        return {
+            r: parseInt(rgbaMatch[1]),
+            g: parseInt(rgbaMatch[2]),
+            b: parseInt(rgbaMatch[3])
+        };
+    }
+    
+    // Handle hex format
+    const hexMatch = color.match(/#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})/i);
+    if (hexMatch) {
+        return {
+            r: parseInt(hexMatch[1], 16),
+            g: parseInt(hexMatch[2], 16),
+            b: parseInt(hexMatch[3], 16)
+        };
+    }
+    
+    return null;
+}
+
+function fixProcessStepColors() {
+    const processSteps = document.querySelectorAll('.process-step, .process-section .process-step');
+    processSteps.forEach(step => {
+        // Skip if part of navbar
+        if (isNavbarElement(step)) return;
+        
+        const headings = step.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        const paragraphs = step.querySelectorAll('p');
+        const divs = step.querySelectorAll('div');
+        
+        [...headings, ...paragraphs, ...divs].forEach(element => {
+            if (!isNavbarElement(element)) {
+                element.style.color = 'var(--dark)';
+            }
+        });
+    });
+}
+
+function fixCardColors() {
+    const cards = document.querySelectorAll('.benefit-item, .service-item, .testimonial-card, .leader-card, .why-card');
+    cards.forEach(card => {
+        // Skip if part of navbar
+        if (isNavbarElement(card)) return;
+        
+        const computedStyle = window.getComputedStyle(card);
+        const backgroundColor = computedStyle.backgroundColor;
+        
+        if (isLightColor(backgroundColor)) {
+            // Light background = black text
+            const textElements = card.querySelectorAll('h1, h2, h3, h4, h5, h6, p, div, span');
+            textElements.forEach(element => {
+                if (!isNavbarElement(element)) {
+                    element.style.color = 'var(--dark)';
+                }
+            });
+        } else {
+            // Dark background = white text
+            const textElements = card.querySelectorAll('h1, h2, h3, h4, h5, h6, p, div, span');
+            textElements.forEach(element => {
+                if (!isNavbarElement(element)) {
+                    element.style.color = 'var(--white)';
+                }
+            });
+        }
+    });
+}
+
+// Run color fixing on page load and after any dynamic content changes
+document.addEventListener('DOMContentLoaded', function() {
+    fixAllColorContrastIssues();
+    
+    // Also run after a short delay to catch any dynamic content
+    setTimeout(fixAllColorContrastIssues, 1000);
+    
+    // Run periodically to catch any new content
+    setInterval(fixAllColorContrastIssues, 5000);
+});
+
 // Service Worker Registration
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
