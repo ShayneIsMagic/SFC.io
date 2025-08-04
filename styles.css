@@ -869,7 +869,7 @@ header {
 
 /* Enhanced Hero Section with Movement */
 .hero {
-    min-height: 100vh;
+    min-height: 80vh;
     background-image: url('assets/SalesforceConsultants-Graphic.png');
     background-size: cover;
     background-position: center;
@@ -907,6 +907,18 @@ header {
     color: var(--white);
     text-align: center;
     margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Hero h1 styling to match other pages */
+.hero h1 {
+    font-size: clamp(4rem, 12vw, 8rem);
+    margin-bottom: 2rem;
+    color: var(--white);
+    line-height: 0.9;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.03em;
     animation: fadeInUp 1s ease-out;
 }
 
@@ -2147,7 +2159,7 @@ footer {
 /* Additional Mobile Responsiveness Improvements */
 @media (max-width: 1024px) {
     .hero h1 {
-        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-size: clamp(3rem, 8vw, 5rem);
     }
     
     .hero p {
@@ -2215,7 +2227,7 @@ footer {
 @media (max-width: 480px) {
     /* Enhanced mobile typography */
     .hero h1 {
-        font-size: clamp(2rem, 6vw, 3rem);
+        font-size: clamp(2.5rem, 8vw, 4rem);
         line-height: 1.2;
     }
     

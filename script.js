@@ -1157,21 +1157,21 @@ function lazyLoadImages() {
     const images = document.querySelectorAll('img[data-src]');
     
     if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
-            });
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
         }, {
             rootMargin: '50px 0px',
             threshold: 0.01
-        });
-        
-        images.forEach(img => imageObserver.observe(img));
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
     } else {
         // Fallback for older browsers
         images.forEach(img => {
