@@ -1052,6 +1052,8 @@ header {
     color: var(--dark);
     margin-bottom: 2.5rem;
     animation: fadeInUp 0.8s ease-out;
+    text-transform: none !important;
+    font-family: 'Oceanwide Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
 .services-grid {
