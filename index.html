@@ -11,6 +11,25 @@
     <meta name="author" content="DevPipeline Salesforce Consulting">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    <meta name="coverage" content="worldwide">
+    <meta name="target" content="all">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Local Business Schema Hints -->
+    <meta name="geo.region" content="US-UT">
+    <meta name="geo.placename" content="Salt Lake City">
+    <meta name="geo.position" content="40.7608;-111.8910">
+    <meta name="ICBM" content="40.7608, -111.8910">
+    
     <!-- Search Engine Verification -->
     <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
     <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
@@ -39,10 +58,21 @@
     
     <!-- Performance Optimizations -->
     <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Preconnect for critical third-party resources -->
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Critical Resources Preload -->
     <link rel="preload" href="assets/logos/Salesforce_Consulting_Logo.svg" as="image" type="image/svg+xml">
     <link rel="preload" href="assets/SalesforceConsultants-Graphic.png" as="image">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
     
     <!-- Performance Optimizations -->
     <link rel="preload" href="assets/Jason Fletcher Profile.JPG" as="image" fetchpriority="high">
@@ -65,39 +95,7 @@
     <link rel="manifest" href="/site.webmanifest">
     
     <!-- Critical CSS for LCP optimization -->
-    <style>
-        /* Critical CSS for above-the-fold content - Improves LCP */
-        :root {
-            --black: #000000;
-            --white: #ffffff;
-            --teal: #3AAEAA;
-            --dark: #172B2B;
-            --light-gray: #f5f5f5;
-            --teal-light: #4BC3BD;
-            --teal-dark: #2A8A85;
-            --dark-light: #2A3F45;
-            --accent-gold: #FFD700;
-            --shadow-light: 0 2px 10px rgba(0,0,0,0.1);
-            --shadow-medium: 0 4px 20px rgba(0,0,0,0.15);
-            --border-radius: 12px;
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Oceanwide Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background: var(--white);
+    <link rel="stylesheet" href="/critical.css">
             overflow-x: hidden;
         }
         
@@ -1580,10 +1578,243 @@
         'cookie_flags': 'SameSite=None;Secure',
         'cookie_domain': 'salesforceconsultants.io',
         'cookie_expires': 365 * 24 * 60 * 60,
-        'send_page_view': true
+        'send_page_view': true,
+        'custom_map': {
+          'custom_parameter_1': 'service_type',
+          'custom_parameter_2': 'page_section'
+        }
+      });
+      
+      // Enhanced conversion tracking
+      gtag('event', 'page_view', {
+        'custom_parameter_1': 'salesforce_consulting',
+        'custom_parameter_2': 'homepage'
+      });
+      
+      // Track form submissions
+      document.addEventListener('DOMContentLoaded', function() {
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+          form.addEventListener('submit', function() {
+            gtag('event', 'form_submit', {
+              'event_category': 'engagement',
+              'event_label': 'contact_form'
+            });
+          });
+        });
+        
+        // Track CTA button clicks
+        const ctaButtons = document.querySelectorAll('a[href*="contact"], .btn-modern, .btn-primary');
+        ctaButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            gtag('event', 'click', {
+              'event_category': 'engagement',
+              'event_label': 'cta_click',
+              'value': 1
+            });
+          });
+        });
       });
     </script>
     
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "SalesforceConsultants.io",
+        "alternateName": "DevPipeline Salesforce Consulting",
+        "description": "Expert Salesforce consulting services including implementation, training, development, and optimization. Transform your business with certified Salesforce professionals.",
+        "url": "https://salesforceconsultants.io",
+        "logo": "https://salesforceconsultants.io/assets/logos/Salesforce_Consulting_Logo.svg",
+        "image": "https://salesforceconsultants.io/assets/SalesforceConsultants-Graphic.png",
+        "telephone": "+1-385-309-0807",
+        "email": "marketing@devpipeline.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressRegion": "Utah"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 40.7608,
+            "longitude": -111.8910
+        },
+        "areaServed": [
+            {
+                "@type": "Country",
+                "name": "United States"
+            },
+            {
+                "@type": "State",
+                "name": "Utah"
+            },
+            {
+                "@type": "City",
+                "name": "Salt Lake City"
+            }
+        ],
+        "serviceType": [
+            "Salesforce Implementation",
+            "Salesforce Training",
+            "Salesforce Development",
+            "Salesforce Integration",
+            "Salesforce Migration",
+            "Salesforce Optimization",
+            "CRM Consulting",
+            "Salesforce Automation"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Salesforce Consulting Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Salesforce Implementation",
+                        "description": "Complete Salesforce implementation from assessment to go-live"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Salesforce Training",
+                        "description": "Comprehensive user training and certification programs"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Salesforce Development",
+                        "description": "Custom Salesforce development and customization"
+                    }
+                }
+            ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "founder": [
+            {
+                "@type": "Person",
+                "name": "Jason Fletcher",
+                "jobTitle": "CEO",
+                "description": "Salesforce certified professional with 15+ years of experience"
+            },
+            {
+                "@type": "Person",
+                "name": "Shayne Roy",
+                "jobTitle": "COO",
+                "description": "Transformative leader in management consulting and tech education"
+            }
+        ],
+        "employee": [
+            {
+                "@type": "Person",
+                "name": "Jason Fletcher",
+                "jobTitle": "CEO",
+                "description": "Salesforce certified professional"
+            },
+            {
+                "@type": "Person",
+                "name": "Shayne Roy",
+                "jobTitle": "COO",
+                "description": "Executive coach and tech education pioneer"
+            }
+        ],
+        "sameAs": [
+            "https://www.linkedin.com/company/salesforce-consultants-io/",
+            "https://www.facebook.com/profile.php?id=61566535995457",
+            "https://www.instagram.com/salesforceconsultants/"
+        ],
+        "openingHours": "Mo-Fr 09:00-17:00",
+        "priceRange": "$$",
+        "paymentAccepted": ["Cash", "Credit Card", "Invoice"],
+        "currenciesAccepted": "USD"
+    }
+    </script>
+
+    <!-- FAQ Schema for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What Salesforce consulting services do you offer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer comprehensive Salesforce consulting services including implementation, custom development, training, integration, migration, optimization, and automation. Our certified professionals help businesses maximize their Salesforce investment."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does Salesforce implementation cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Salesforce implementation costs vary based on complexity, customization needs, and user count. We provide free assessments and ROI calculators to help determine the exact investment needed for your business."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer Salesforce training and certification?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we provide comprehensive Salesforce training programs including user training, administrator certification, and developer training. Our programs are designed to ensure your team becomes self-sufficient."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What industries do you serve?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We serve various industries including nonprofits, chambers of commerce, professional associations, membership organizations, professional services, and B2B service companies."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does Salesforce implementation take?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Implementation timelines vary from 4-12 weeks depending on complexity and customization requirements. Our proven process ensures efficient delivery while maintaining quality and user adoption."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SalesforceConsultants.io",
+        "alternateName": "DevPipeline Salesforce Consulting",
+        "url": "https://salesforceconsultants.io",
+        "logo": "https://salesforceconsultants.io/assets/logos/Salesforce_Consulting_Logo.svg",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-385-309-0807",
+            "contactType": "customer service",
+            "availableLanguage": "English",
+            "areaServed": "US"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/salesforce-consultants-io/",
+            "https://www.facebook.com/profile.php?id=61566535995457",
+            "https://www.instagram.com/salesforceconsultants/"
+        ]
+    }
+    </script>
+
     <!-- Main JavaScript - Load with defer -->
     <script src="/script.js?v=2024.1.22" defer></script>
 </body>

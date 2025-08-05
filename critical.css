@@ -1,4 +1,5 @@
-/* Critical CSS for above-the-fold content - Improves LCP */
+/* Critical CSS for above-the-fold content - Improves LCP and FCP */
+
 :root {
     --black: #000000;
     --white: #ffffff;
@@ -17,15 +18,16 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Oceanwide Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--dark);
@@ -33,23 +35,52 @@ body {
     overflow-x: hidden;
 }
 
-.container {
+/* Critical header styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: var(--shadow-light);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-/* Critical Hero Styles */
-.hero {
-    position: relative;
-    min-height: 80vh;
-    background: linear-gradient(135deg, rgba(58, 175, 170, 0.1) 0%, rgba(23, 37, 43, 0.95) 100%);
+.logo {
     display: flex;
     align-items: center;
-    justify-content: center;
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.logo img {
+    height: 35px;
+    margin-right: 0.5rem;
+}
+
+/* Critical hero styles */
+.hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+    color: var(--white);
+    padding: 120px 0 80px;
+    position: relative;
     overflow: hidden;
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .hero-overlay {
@@ -58,78 +89,73 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(23, 43, 59, 0.7);
+    background: linear-gradient(135deg, rgba(58, 175, 170, 0.1) 0%, rgba(23, 37, 43, 0.95) 100%);
     z-index: 1;
 }
 
 .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
     position: relative;
     z-index: 2;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    content-visibility: auto;
-    contain-intrinsic-size: 0 400px;
 }
 
 .hero-content {
-    color: var(--white);
-    content-visibility: auto;
-    contain-intrinsic-size: 0 300px;
+    max-width: 100%;
 }
 
 .hero h1 {
-    font-size: clamp(4rem, 12vw, 8rem);
+    font-size: clamp(3rem, 8vw, 5rem);
     margin-bottom: 2rem;
     color: var(--white);
-    font-weight: 700;
     line-height: 1.1;
-    text-shadow: 0 6px 12px rgba(0,0,0,0.5);
-    content-visibility: auto;
-    contain-intrinsic-size: 0 100px;
+    font-weight: 700;
+}
+
+.hero-highlight {
+    color: var(--teal);
+    position: relative;
 }
 
 .hero p {
     font-size: clamp(1.2rem, 2.5vw, 1.6rem);
     margin-bottom: 3rem;
-    color: rgba(255,255,255,0.9);
-    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
 }
 
+/* Critical CTA button styles */
 .cta-buttons {
     display: flex;
     gap: 1.5rem;
-    justify-content: center;
     flex-wrap: wrap;
-    content-visibility: auto;
-    contain-intrinsic-size: 0 80px;
 }
 
 .btn-primary, .btn-secondary {
-    display: inline-block;
     padding: 1rem 2rem;
     border-radius: var(--border-radius);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     transition: var(--transition);
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    text-align: center;
+    min-width: 160px;
 }
 
 .btn-primary {
     background: var(--teal);
     color: var(--white);
-    box-shadow: var(--shadow-medium);
+    border: 2px solid var(--teal);
 }
 
 .btn-primary:hover {
-    background: var(--teal-light);
+    background: var(--teal-dark);
+    border-color: var(--teal-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-medium);
 }
@@ -144,52 +170,58 @@ body {
     background: var(--white);
     color: var(--dark);
     transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
 }
 
-/* Critical Header Styles */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    box-shadow: var(--shadow-light);
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
+/* Critical container styles */
+.container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+/* Critical section styles */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 1.5rem;
     color: var(--dark);
     font-weight: 700;
-    font-size: 1.2rem;
 }
 
-.logo img {
-    height: 35px;
-    margin-right: 8px;
+.section-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: #5a6c7d;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
-/* Mobile Responsive */
+/* Critical responsive styles */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 1.5rem;
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
     }
     
+    .cta-buttons {
+        justify-content: center;
+    }
+    
+    .btn-primary, .btn-secondary {
+        min-width: 140px;
+        padding: 0.875rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
     .hero {
-        min-height: 70vh;
-        padding-top: 80px;
+        padding: 100px 0 60px;
     }
     
     .hero h1 {
@@ -197,7 +229,7 @@ header {
     }
     
     .hero p {
-        font-size: clamp(1rem, 2vw, 1.3rem);
+        font-size: clamp(1rem, 3vw, 1.3rem);
     }
     
     .cta-buttons {
@@ -207,10 +239,6 @@ header {
     
     .btn-primary, .btn-secondary {
         width: 100%;
-        max-width: 300px;
-    }
-    
-    .header-content {
-        padding: 1rem 1.5rem;
+        max-width: 280px;
     }
 } 
