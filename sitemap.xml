@@ -11,9 +11,31 @@
         <priority>1.0</priority>
         <image:image>
             <image:loc>https://salesforceconsultants.io/assets/SalesforceConsultants-Graphic.png</image:loc>
-            <image:title>Salesforce Consulting Services</image:title>
-            <image:caption>Expert Salesforce implementation, training, and development services</image:caption>
+            <image:title>Salesforce Consulting Services - Utah & California</image:title>
+            <image:caption>Expert Salesforce implementation, training, and development services in Utah, California, and surrounding areas</image:caption>
         </image:image>
+    </url>
+    
+    <!-- Local Service Pages -->
+    <url>
+        <loc>https://salesforceconsultants.io/services.html</loc>
+        <lastmod>2025-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://salesforceconsultants.io/contact.html</loc>
+        <lastmod>2025-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://salesforceconsultants.io/faq.html</loc>
+        <lastmod>2025-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     
     <!-- Services Section -->

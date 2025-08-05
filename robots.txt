@@ -7,8 +7,57 @@ Sitemap: https://salesforceconsultants.io/sitemap.xml
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Additional sitemaps
-Sitemap: https://salesforceconsultants.io/sitemap.xml
+# Security: Block malicious bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
+
+User-agent: BLEXBot
+Crawl-delay: 10
+
+# Block aggressive scrapers
+User-agent: *bot
+Crawl-delay: 5
+
+User-agent: *crawler
+Crawl-delay: 5
+
+# Allow legitimate search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block admin and sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /backup/
+Disallow: /logs/
+Disallow: /config/
+
+# Allow important pages for SEO
+Allow: /index.html
+Allow: /styles.css
+Allow: /script.js
+Allow: /favicon.ico
+Allow: /sitemap.xml
+Allow: /robots.txt
 
 # Allow all search engines to crawl the site
 # This helps with SEO for Salesforce consulting keywords
