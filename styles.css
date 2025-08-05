@@ -19,6 +19,9 @@ img {
     display: block;
     /* Prevent layout shifts */
     aspect-ratio: attr(width) / attr(height);
+    /* Optimize for performance */
+    will-change: auto;
+    contain: layout style paint;
 }
 
 /* Optimize fonts for performance - Use system fonts as fallback */
@@ -35,6 +38,29 @@ img, video, iframe {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* Critical CSS for LCP optimization */
+.hero {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+}
+
+.hero h1 {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 100px;
+}
+
+/* Optimize for Core Web Vitals */
+.hero-container {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 400px;
+}
+
+/* Reduce CLS */
+.cta-buttons {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 80px;
 }
 
 /* Optimize animations for performance */
