@@ -42,7 +42,7 @@ function fixAllColorContrastIssues() {
 }
 
 function isNavbarElement(element) {
-    // Check if element is part of the navbar
+    // Check if element is part of the navbar or popups
     return element.closest('header') !== null ||
            element.closest('.main-nav') !== null ||
            element.closest('.nav-icons') !== null ||
@@ -51,7 +51,10 @@ function isNavbarElement(element) {
            element.closest('.share-menu') !== null ||
            element.closest('.mobile-menu-btn') !== null ||
            element.closest('.logo') !== null ||
-           element.closest('.nav-icon') !== null;
+           element.closest('.nav-icon') !== null ||
+           element.closest('#exitIntentPopup') !== null ||
+           element.closest('#searchModal') !== null ||
+           element.closest('#bioModal') !== null;
 }
 
 function isLightColor(color) {
@@ -175,9 +178,9 @@ function initializeSite() {
     // Initialize exit intent popup
     initializeExitIntentPopup();
     
-    // Set up periodic color fixing
-    setTimeout(fixAllColorContrastIssues, 1000);
-    setInterval(fixAllColorContrastIssues, 5000);
+    // Set up periodic color fixing (reduced frequency to prevent styling conflicts)
+    setTimeout(fixAllColorContrastIssues, 2000);
+    setInterval(fixAllColorContrastIssues, 10000);
     
     console.log('✅ Site initialization complete');
 }
@@ -1327,8 +1330,9 @@ function initializeExitIntentPopup() {
     
     // Create popup HTML
     const popupHTML = `
-        <div id="exitIntentPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; display: flex; align-items: center; justify-content: center;">
-            <div style="background: white; padding: 2rem; border-radius: 16px; max-width: 500px; margin: 1rem; text-align: center; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+        <div id="exitIntentPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000;">
+            <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                <div style="background: white; padding: 2rem; border-radius: 16px; max-width: 500px; margin: 1rem; text-align: center; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
                 <button onclick="closeExitIntentPopup()" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #666;">×</button>
                 <h3 style="color: #3AAEAA; margin-bottom: 1rem; font-size: 1.5rem;">Wait! Get Your Free Salesforce Assessment</h3>
                 <p style="color: #5a6c7d; margin-bottom: 1.5rem; line-height: 1.6;">Don't miss out on optimizing your Salesforce investment. Get a free assessment worth $500 and discover how to improve your ROI by 40%.</p>
@@ -1366,7 +1370,7 @@ function initializeExitIntentPopup() {
 function showExitIntentPopup() {
     const popup = document.getElementById('exitIntentPopup');
     if (popup && !isPopupVisible) {
-        popup.style.display = 'flex';
+        popup.style.display = 'block';
         isPopupVisible = true;
         hasShownPopup = true;
         
