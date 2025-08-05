@@ -95,25 +95,62 @@
 
 ## 📧 **Step 6: Email Reminder System**
 
+### **Automated Email Setup for shayne@devpipeline.com**
+
+#### **1. Google Calendar Email Notifications**
+1. Go to Google Calendar Settings
+2. Add shayne@devpipeline.com as attendee to all recurring events
+3. Set email notifications to 1 hour before each task
+4. Include task checklist in event description
+
+#### **2. Google Analytics Email Alerts**
+1. Go to Google Analytics → Admin → Custom Alerts
+2. Set up alerts for shayne@devpipeline.com
+3. Configure email notifications for:
+   - Traffic drops
+   - Conversion rate changes
+   - Lead generation drops
+   - Page speed issues
+
+#### **3. Google Search Console Email Notifications**
+1. Go to Google Search Console → Settings → Preferences
+2. Add shayne@devpipeline.com to email notifications
+3. Enable alerts for:
+   - Manual actions
+   - Mobile usability issues
+   - Core Web Vitals issues
+   - Security issues
+
+#### **4. Google My Business Email Alerts**
+1. Go to Google My Business
+2. Add shayne@devpipeline.com as manager
+3. Enable email notifications for:
+   - New reviews
+   - Questions from customers
+   - Photo uploads
+   - Business information changes
+
 ### **Create Email Templates:**
 
 #### **Weekly Reminder Template:**
 ```
 Subject: 🚨 Weekly Website SEO Check - Due Today
 
-Hi [Your Name],
+Hi Shayne,
 
 It's time for your weekly website maintenance check:
 
-✅ Check Google Search Console for new search queries
-✅ Review Google Analytics for traffic trends  
-✅ Monitor exit-intent popup conversion rates
-✅ Test page speed using PageSpeed Insights
-✅ Check for broken links
+✅ Check Google Search Console for new search queries (15 min)
+✅ Review Google Analytics for traffic trends (20 min)
+✅ Monitor exit-intent popup conversion rates (10 min)
+✅ Test page speed using PageSpeed Insights (15 min)
+✅ Check for broken links (15 min)
 
-Estimated time: 30 minutes
+Total estimated time: 75 minutes
 
 Link to full checklist: [Link to maintenance-alerts.md]
+
+All tasks assigned to: shayne@devpipeline.com
 
 Best regards,
 Your SEO Alert System
@@ -123,19 +160,21 @@ Your SEO Alert System
 ```
 Subject: 🚨 Monthly SEO Review - Due This Week
 
-Hi [Your Name],
+Hi Shayne,
 
 Time for your comprehensive monthly SEO review:
 
-✅ Complete SEO audit using SEMrush/Ahrefs
-✅ Review keyword rankings for target terms
-✅ Analyze competitor strategies
-✅ Update meta descriptions for underperforming pages
-✅ Plan content calendar for next month
+✅ Complete SEO audit using SEMrush/Ahrefs (2-3 hours)
+✅ Review keyword rankings for target terms (1 hour)
+✅ Analyze competitor strategies (1-2 hours)
+✅ Update meta descriptions for underperforming pages (30 min)
+✅ Plan content calendar for next month (1 hour)
 
-Estimated time: 2-3 hours
+Total estimated time: 5.5-7.5 hours
 
 Link to full checklist: [Link to maintenance-alerts.md]
+
+All tasks assigned to: shayne@devpipeline.com
 
 Best regards,
 Your SEO Alert System
