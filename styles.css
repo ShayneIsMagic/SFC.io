@@ -2089,6 +2089,69 @@ footer {
     margin: 0 auto;
 }
 
+/* Process Steps for services pages */
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+    margin-top: 3rem;
+}
+
+.process-steps .process-step {
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.process-steps .process-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: var(--teal);
+    font-weight: bold;
+    z-index: 2;
+}
+
+.process-steps .process-step-number {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: var(--teal);
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.process-steps .process-step h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.process-steps .process-step p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #5a6c7d;
+}
+
 .process-step {
     text-align: center;
     padding: 3rem 2rem;
@@ -2177,29 +2240,64 @@ footer {
 
 @media (max-width: 768px) {
     .process-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.2rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 500px;
+        margin: 0 auto;
     }
     
     .process-step {
-        padding: 2rem 1.2rem;
+        padding: 2.5rem 2rem;
     }
     
     .process-step-number {
-        width: 55px;
-        height: 55px;
-        font-size: 1.4rem;
-        margin-bottom: 1.2rem;
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
     
     .process-step h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.8rem;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
     }
     
     .process-step p {
-        font-size: 0.95rem;
-        line-height: 1.5;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    /* Mobile styles for process-steps */
+    .process-steps {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .process-steps .process-step {
+        padding: 1rem;
+    }
+    
+    .process-steps .process-step:not(:last-child)::after {
+        content: '↓';
+        position: absolute;
+        right: 50%;
+        top: 100%;
+        transform: translateX(50%);
+        font-size: 1.5rem;
+    }
+    
+    .process-steps .process-step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1.5rem;
+    }
+    
+    .process-steps .process-step h3 {
+        font-size: 1.1rem;
+    }
+    
+    .process-steps .process-step p {
+        font-size: 0.9rem;
     }
 }
 
@@ -2364,6 +2462,29 @@ footer {
     
     .process-step p {
         font-size: 0.85rem;
+    }
+    
+    /* Mobile styles for process-steps at 480px */
+    .process-steps {
+        gap: 0.75rem;
+    }
+    
+    .process-steps .process-step {
+        padding: 0.75rem;
+    }
+    
+    .process-steps .process-step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+    }
+    
+    .process-steps .process-step h3 {
+        font-size: 1rem;
+    }
+    
+    .process-steps .process-step p {
+        font-size: 0.8rem;
     }
 }
 
