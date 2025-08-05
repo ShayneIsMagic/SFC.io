@@ -172,6 +172,9 @@ function initializeSite() {
     // Initialize bio modal
     initializeBioModal();
     
+    // Initialize exit intent popup
+    initializeExitIntentPopup();
+    
     // Set up periodic color fixing
     setTimeout(fixAllColorContrastIssues, 1000);
     setInterval(fixAllColorContrastIssues, 5000);
@@ -1317,6 +1320,74 @@ function initializeBioModal() {
     });
 }
 
+// Exit Intent Popup System
+function initializeExitIntentPopup() {
+    let hasShownPopup = false;
+    let isPopupVisible = false;
+    
+    // Create popup HTML
+    const popupHTML = `
+        <div id="exitIntentPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; display: flex; align-items: center; justify-content: center;">
+            <div style="background: white; padding: 2rem; border-radius: 16px; max-width: 500px; margin: 1rem; text-align: center; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                <button onclick="closeExitIntentPopup()" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #666;">×</button>
+                <h3 style="color: #3AAEAA; margin-bottom: 1rem; font-size: 1.5rem;">Wait! Get Your Free Salesforce Assessment</h3>
+                <p style="color: #5a6c7d; margin-bottom: 1.5rem; line-height: 1.6;">Don't miss out on optimizing your Salesforce investment. Get a free assessment worth $500 and discover how to improve your ROI by 40%.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" style="background: #3AAEAA; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;">Get Free Assessment</a>
+                    <button onclick="closeExitIntentPopup()" style="background: #f8f9fa; color: #5a6c7d; padding: 12px 24px; border: 1px solid #dee2e6; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Maybe Later</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add popup to page
+    document.body.insertAdjacentHTML('beforeend', popupHTML);
+    
+    // Track mouse movement
+    document.addEventListener('mouseleave', function(e) {
+        if (e.clientY <= 0 && !hasShownPopup && !isPopupVisible) {
+            showExitIntentPopup();
+        }
+    });
+    
+    // Track scroll behavior (if user scrolls to bottom quickly)
+    let scrollTimeout;
+    document.addEventListener('scroll', function() {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function() {
+            const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            if (scrollPercentage > 80 && !hasShownPopup && !isPopupVisible) {
+                showExitIntentPopup();
+            }
+        }, 1000);
+    });
+}
+
+function showExitIntentPopup() {
+    const popup = document.getElementById('exitIntentPopup');
+    if (popup && !isPopupVisible) {
+        popup.style.display = 'flex';
+        isPopupVisible = true;
+        hasShownPopup = true;
+        
+        // Track conversion
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'exit_intent_popup_shown', {
+                'event_category': 'engagement',
+                'event_label': 'exit_intent_popup'
+            });
+        }
+    }
+}
+
+function closeExitIntentPopup() {
+    const popup = document.getElementById('exitIntentPopup');
+    if (popup) {
+        popup.style.display = 'none';
+        isPopupVisible = false;
+    }
+}
+
 // Export functions for global access (if needed)
 window.toggleMobileMenu = toggleMobileMenu;
 window.showNotification = showNotification;
@@ -1324,5 +1395,6 @@ window.openSearchModal = openSearchModal;
 window.closeSearchModal = closeSearchModal;
 window.openBioModal = openBioModal;
 window.closeBioModal = closeBioModal;
+window.closeExitIntentPopup = closeExitIntentPopup;
 
  
