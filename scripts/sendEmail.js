@@ -1,3 +1,5 @@
+import { showNotification, validateForm } from "../script.js";
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contact-form");
   if (!form) {
@@ -5,69 +7,62 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  const submitButton = form.querySelector("button[type='submit']");
-  const emailInput = form.querySelector("input[type='email']");
-  const phoneInput = form.querySelector("input[name='phone']");
-  let invalidEmailToastShown = false;
-  let invalidPhoneToastShown = false;
+  const submitButton = form.querySelector("#submit-btn");
+  const submitButtonText = submitButton.textContent;
+  let completedRecaptcha = false;
 
   submitButton.disabled = false;
+
+  function recaptchaDataCallback(data) {
+    // fetch(`https://flask-mailer-04f370a78f42.herokuapp.com/get-recaptcha-res`, {
+    fetch(`http://127.0.0.1:5000/get-recaptcha-res`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token: data }),
+    })
+      .then(async (res) => {
+        const results = await res.json();
+        completedRecaptcha = results.success;
+      })
+      .catch(() => {
+        grecaptcha.reset();
+      });
+  }
+
+  function recaptchaExpiredCallback() {
+    completedRecaptcha = false;
+  }
+
+  window.recaptchaDataCallback = recaptchaDataCallback;
+  window.recaptchaExpiredCallback = recaptchaExpiredCallback;
 
   function validateEmail(email) {
     const emailRegex = /^[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,10}$/;
     return emailRegex.test(email);
   }
 
-  function validatePhone(phone) {
-    if (!phone) return true;
-    const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    return phoneRegex.test(phone);
-  }
-
-  form.addEventListener("submit", function (e) {
+  submitButton.addEventListener("click", function (e) {
     e.preventDefault();
-
-    const requiredFields = form.querySelectorAll("[required]");
-    const missingFields = [];
-
-    requiredFields.forEach((el) => {
-      if (!el.value.trim()) {
-        const label = form.querySelector(`label[for="${el.id}"]`);
-        missingFields.push(
-          label
-            ? label.innerText.replace("*", "").trim()
-            : el.name || el.id || "Unnamed field"
-        );
+    const [isValid, isMalformedEmail] = validateForm();
+    if (!isValid) {
+      let message = "Fill out all required fields";
+      if (isMalformedEmail) {
+        message = message + ". \nPlease enter a valid email.";
       }
-    });
-
-    if (missingFields.length > 0) {
-      displayToast(
-        `Please fill in the following fields: ${missingFields.join(", ")}`,
-        "error"
-      );
-      return;
+      return showNotification(message, "error");
     }
 
-    const emailValue = emailInput?.value.trim();
-    if (!validateEmail(emailValue)) {
-      if (!invalidEmailToastShown) {
-        displayToast("Please enter a valid email address.", "error");
-        invalidEmailToastShown = true;
-      }
-      return;
-    }
+    const captchaResponse = grecaptcha.getResponse();
 
-    const phoneValue = phoneInput?.value.trim();
-    if (!validatePhone(phoneValue)) {
-      if (!invalidPhoneToastShown) {
-        displayToast("Please enter a valid phone number.", "error");
-        invalidPhoneToastShown = true;
-      }
+    if (captchaResponse.length === 0 || !completedRecaptcha) {
+      showNotification("Please complete the reCAPTCHA verification.", "error");
       return;
     }
 
     submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
     submitForm();
   });
 
@@ -75,57 +70,43 @@ document.addEventListener("DOMContentLoaded", function () {
     const formData = new FormData(form);
     const emailData = Object.fromEntries(formData.entries());
 
+    if (emailData["g-recaptcha-response"]) {
+      delete emailData["g-recaptcha-response"];
+    }
+
     fetch("http://localhost:5000/send", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(emailData),
     })
       .then(async (response) => {
-        const result = await response.json();
         if (response.ok) {
-          displayToast(
-            result.MESSAGE || "Message sent successfully!",
-            "success"
-          );
           form.reset();
+          grecaptcha.reset();
           invalidEmailToastShown = false;
           invalidPhoneToastShown = false;
+          showNotification(
+            `Thank you! Your Salesforce assessment request has been sent. We\'ll contact you soon.`,
+            "success",
+            10000
+          );
         } else {
-          displayToast(
-            result.error || result.MESSAGE || "Failed to send message.",
+          showNotification(
+            "Failed to send message. Please try again later.",
             "error"
           );
         }
       })
       .catch((error) => {
         console.error("Network error:", error);
-        displayToast(
+        showNotification(
           "There was a problem sending the email. Please try again later.",
           "error"
         );
       })
       .finally(() => {
         submitButton.disabled = false;
+        submitButton.textContent = submitButtonText;
       });
-  }
-
-  function displayToast(message, type = "success") {
-    const container = document.querySelector(".toast-container");
-    if (!container) {
-      alert(`${type.toUpperCase()}: ${message}`);
-      return;
-    }
-
-    const toast = document.createElement("div");
-    toast.className = `toast ${type}`;
-    toast.innerText = message;
-
-    container.appendChild(toast);
-
-    toast.addEventListener("animationend", (e) => {
-      if (e.animationName === "stayThenFade") {
-        toast.remove();
-      }
-    });
   }
 });
