@@ -976,8 +976,6 @@ function initializeAnimations() {
   });
 }
 
-// Form Handling
-
 // Notification system
 export function showNotification(message, type = "info", autoClose = 5000) {
   // Remove existing notifications
@@ -1376,10 +1374,9 @@ function initializeBioModal() {
 }
 
 // Exit Intent Popup System
+let hasShownPopup = false;
+let isPopupVisible = false;
 function initializeExitIntentPopup() {
-  let hasShownPopup = false;
-  let isPopupVisible = false;
-
   // Create popup HTML
   const popupHTML = `
         <div id="exitIntentPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000;">
@@ -1402,7 +1399,7 @@ function initializeExitIntentPopup() {
   // Track mouse movement
   document.addEventListener("mouseleave", function (e) {
     if (e.clientY <= 0 && !hasShownPopup && !isPopupVisible) {
-      showExitIntentPopup(isPopupVisible);
+      showExitIntentPopup();
     }
   });
 
@@ -1415,13 +1412,13 @@ function initializeExitIntentPopup() {
         (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
         100;
       if (scrollPercentage > 80 && !hasShownPopup && !isPopupVisible) {
-        showExitIntentPopup(isPopupVisible);
+        showExitIntentPopup();
       }
     }, 1000);
   });
 }
 
-function showExitIntentPopup(isPopupVisible) {
+function showExitIntentPopup() {
   const popup = document.getElementById("exitIntentPopup");
   if (popup && !isPopupVisible) {
     popup.style.display = "block";

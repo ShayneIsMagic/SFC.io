@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   submitButton.disabled = false;
 
   function recaptchaDataCallback(data) {
-    // fetch(`https://flask-mailer-04f370a78f42.herokuapp.com/get-recaptcha-res`, {
-    fetch(`http://127.0.0.1:5000/get-recaptcha-res`, {
+    fetch(`https://flask-mailer-04f370a78f42.herokuapp.com/get-recaptcha-res`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,11 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.recaptchaDataCallback = recaptchaDataCallback;
   window.recaptchaExpiredCallback = recaptchaExpiredCallback;
-
-  function validateEmail(email) {
-    const emailRegex = /^[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,10}$/;
-    return emailRegex.test(email);
-  }
 
   submitButton.addEventListener("click", function (e) {
     e.preventDefault();

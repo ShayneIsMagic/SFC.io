@@ -325,15 +325,6 @@
         margin-bottom: 32px;
       }
 
-      /* .form-group select {
-        cursor: pointer;
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-        background-position: right 0.75rem center;
-        background-repeat: no-repeat;
-        background-size: 1.5em 1.5em;
-        padding-right: 2.5rem;
-      } */
-
       .required-field::after {
         content: " *";
         color: var(--accent-orange);
@@ -558,7 +549,7 @@
       }
 
       .faq-answer p {
-        color: var(--text-light);
+        color: var(--dark-light);
         line-height: 1.7;
         margin-bottom: 1rem;
       }
@@ -1082,7 +1073,11 @@
             </button>
           </form>
 
-          <div class="contact-info">
+          <div
+            id="contact-info"
+            class="contact-info"
+            style="scroll-margin-top: 100px"
+          >
             <h3>Prefer to Talk Directly?</h3>
             <p>
               Schedule a 30-minute Salesforce consultation to discuss your
