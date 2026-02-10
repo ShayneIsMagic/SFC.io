@@ -39,12 +39,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   submitButton.addEventListener("click", function (e) {
     e.preventDefault();
-    const [isValid, isMalformedEmail] = validateForm();
+    const [isValid, hasMissingFields, hasMalformedEmail] = validateForm();
     if (!isValid) {
-      let message = "Fill out all required fields";
-      if (isMalformedEmail) {
-        message = message + ". \nPlease enter a valid email.";
+      const messageArray = [];
+      if (hasMissingFields) {
+        messageArray.push("Fill out all required fields.");
       }
+      if (hasMalformedEmail) {
+        messageArray.push("Please enter a valid email.");
+      }
+      const message = messageArray.join(`\n`);
       return showNotification(message, "error");
     }
 
@@ -68,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
       delete emailData["g-recaptcha-response"];
     }
 
-    fetch("http://localhost:5000/send", {
+    fetch("https://flask-mailer-04f370a78f42.herokuapp.com/send", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(emailData),
@@ -77,8 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (response.ok) {
           form.reset();
           grecaptcha.reset();
-          invalidEmailToastShown = false;
-          invalidPhoneToastShown = false;
           showNotification(
             `Thank you! Your Salesforce assessment request has been sent. We\'ll contact you soon.`,
             "success",

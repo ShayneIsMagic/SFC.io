@@ -1165,13 +1165,15 @@ export function validateForm(form = null) {
     "input[required], select[required], textarea[required]"
   );
   let isValid = true;
-  let isMalformedEmail = null;
+  let hasMissingFields = false;
+  let hasMalformedEmail = false;
   let firstInvalid = null;
 
   requiredFields.forEach((field) => {
     if (!field.value.trim()) {
       field.style.borderColor = "var(--accent-red)";
       isValid = false;
+      hasMissingFields = true;
       if (!firstInvalid) {
         firstInvalid = field;
       }
@@ -1188,7 +1190,7 @@ export function validateForm(form = null) {
     if (!emailRegex.test(emailField.value)) {
       emailField.style.borderColor = "var(--accent-red)";
       isValid = false;
-      isMalformedEmail = true;
+      hasMalformedEmail = true;
       if (!firstInvalid) {
         firstInvalid = emailField;
       }
@@ -1199,7 +1201,7 @@ export function validateForm(form = null) {
     firstInvalid.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  return [isValid, isMalformedEmail];
+  return [isValid,  hasMissingFields, hasMalformedEmail];
 }
 
 const requiredFields = document.querySelectorAll(
