@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   submitButton.disabled = false;
 
   function recaptchaDataCallback(data) {
-    // fetch(`https://flask-mailer-04f370a78f42.herokuapp.com/get-recaptcha-res`, {
-    fetch(`http://127.0.0.1:5000/get-recaptcha-res`, {
+    fetch(`https://flask-mailer-04f370a78f42.herokuapp.com/get-recaptcha-res`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,8 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
       delete emailData["g-recaptcha-response"];
     }
 
-    // fetch("https://flask-mailer-04f370a78f42.herokuapp.com/send", {
-    fetch("http://127.0.0.1:5000/send", {
+    fetch("https://flask-mailer-04f370a78f42.herokuapp.com/send", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(emailData),
