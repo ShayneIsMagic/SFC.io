@@ -1,961 +1,1806 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48x48.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="/favicon/favicon-48x48.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/favicon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/favicon/android-chrome-512x512.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZNLKDLFEC"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-8ZNLKDLFEC"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-8ZNLKDLFEC');
+      gtag("config", "G-8ZNLKDLFEC");
     </script>
-    <title>Salesforce Partners & Clients | LA Chamber & More | California, Missouri, Kansas</title>
-    <meta name="description" content="See organizations that trust us across California (LA Chamber), Missouri, Kansas, and Utah. From nonprofits to Fortune 500 companies. Real testimonials and case studies.">
-    <meta name="keywords" content="LA Chamber Salesforce, California Salesforce clients, Missouri Salesforce partners, Kansas Salesforce clients, Salesforce partners, Salesforce clients, LA Chamber of Commerce, nonprofit Salesforce, Salesforce consulting partners, Salesforce implementation partners, Salesforce training partners, employer partners, Los Angeles Salesforce, Kansas City Salesforce, St. Louis Salesforce">
-    <meta name="author" content="SalesforceConsultants.io">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    
+    <title>
+      Salesforce Partners & Clients | LA Chamber & More | California, Missouri,
+      Kansas
+    </title>
+    <meta
+      name="description"
+      content="See organizations that trust us across California (LA Chamber), Missouri, Kansas, and Utah. From nonprofits to Fortune 500 companies. Real testimonials and case studies."
+    />
+    <meta
+      name="keywords"
+      content="LA Chamber Salesforce, California Salesforce clients, Missouri Salesforce partners, Kansas Salesforce clients, Salesforce partners, Salesforce clients, LA Chamber of Commerce, nonprofit Salesforce, Salesforce consulting partners, Salesforce implementation partners, Salesforce training partners, employer partners, Los Angeles Salesforce, Kansas City Salesforce, St. Louis Salesforce"
+    />
+    <meta name="author" content="SalesforceConsultants.io" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://salesforceconsultants.io/salesforce-clients-partners.html">
-    <meta property="og:title" content="Salesforce Partners & Clients | LA Chamber & More | California, Missouri, Kansas">
-    <meta property="og:description" content="See organizations that trust us across California (LA Chamber), Missouri, Kansas, and Utah. Real testimonials and case studies.">
-    <meta property="og:image" content="https://salesforceconsultants.io/assets/SalesforceConsultants-Graphic.png">
-    <meta property="og:site_name" content="SalesforceConsultants.io">
-    
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://salesforceconsultants.io/salesforce-clients-partners.html"
+    />
+    <meta
+      property="og:title"
+      content="Salesforce Partners & Clients | LA Chamber & More | California, Missouri, Kansas"
+    />
+    <meta
+      property="og:description"
+      content="See organizations that trust us across California (LA Chamber), Missouri, Kansas, and Utah. Real testimonials and case studies."
+    />
+    <meta
+      property="og:image"
+      content="https://salesforceconsultants.io/assets/SalesforceConsultants-Graphic.png"
+    />
+    <meta property="og:site_name" content="SalesforceConsultants.io" />
+
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://salesforceconsultants.io/salesforce-clients-partners.html">
-    <meta property="twitter:title" content="Salesforce Partners & Clients | LA Chamber & More | California, Missouri, Kansas">
-    <meta property="twitter:description" content="See organizations that trust us across California (LA Chamber), Missouri, Kansas, and Utah. Real testimonials.">
-    <meta property="twitter:image" content="https://salesforceconsultants.io/assets/SalesforceConsultants-Graphic.png">
-    
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://salesforceconsultants.io/salesforce-clients-partners.html"
+    />
+    <meta
+      property="twitter:title"
+      content="Salesforce Partners & Clients | LA Chamber & More | California, Missouri, Kansas"
+    />
+    <meta
+      property="twitter:description"
+      content="See organizations that trust us across California (LA Chamber), Missouri, Kansas, and Utah. Real testimonials."
+    />
+    <meta
+      property="twitter:image"
+      content="https://salesforceconsultants.io/assets/SalesforceConsultants-Graphic.png"
+    />
+
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://salesforceconsultants.io/salesforce-clients-partners.html">
-    
+    <link
+      rel="canonical"
+      href="https://salesforceconsultants.io/salesforce-clients-partners.html"
+    />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
     <!-- Oceanwide Pro Font -->
-    
+
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/styles.css?v=2024.1.24">
-    <link rel="stylesheet" href="/components.css?v=2025.1.20">
-    
+    <link rel="stylesheet" href="/styles.css?v=2024.1.24" />
+    <link rel="stylesheet" href="/components.css?v=2025.1.20" />
+
     <!-- Additional styles for logo collage -->
     <style>
+      .clients-hero {
+        background: var(--dark);
+        color: var(--white);
+        padding: 120px 0 80px;
+        text-align: center;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .clients-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(58, 175, 170, 0.1) 0%,
+          rgba(23, 37, 43, 0.95) 100%
+        );
+        z-index: 1;
+      }
+
+      .clients-hero-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: center;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 5vw;
+        position: relative;
+        z-index: 2;
+      }
+
+      .clients-hero-image {
+        width: 100%;
+        height: 600px;
+        background-image: url("/assets/Energy Summit.png");
+        background-size: cover;
+        background-position: center;
+        border-radius: var(--border-radius);
+        animation: heroZoom 20s ease-in-out infinite;
+      }
+
+      @keyframes heroZoom {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .clients-hero h1 {
+        font-size: clamp(3rem, 8vw, 6rem);
+        margin-bottom: 2rem;
+        color: var(--white);
+        line-height: 0.9;
+        font-weight: 700;
+        text-transform: none;
+        letter-spacing: -0.03em;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .clients-hero p {
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 650px;
+        margin: 0 auto 3rem;
+        line-height: 1.4;
+        font-weight: 400;
+        animation: fadeInUp 1s ease-out 0.2s both;
+      }
+
+      .logo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3rem;
+        padding: 6rem 0;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .clients-hero-content {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Mobile responsiveness for clients hero */
+      @media (max-width: 768px) {
         .clients-hero {
-            background: var(--dark);
-            color: var(--white);
-            padding: 120px 0 80px;
-            text-align: center;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
+          padding: 100px 0 60px;
+          min-height: 70vh;
         }
-        
-        .clients-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(58, 175, 170, 0.1) 0%, rgba(23, 37, 43, 0.95) 100%);
-            z-index: 1;
-        }
-        
+
         .clients-hero-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 0 5vw;
-            position: relative;
-            z-index: 2;
+          grid-template-columns: 1fr;
+          gap: 3rem;
+          padding: 0 3vw;
         }
-        
+
         .clients-hero-image {
-            width: 100%;
-            height: 600px;
-            background-image: url('/assets/Energy Summit.png');
-            background-size: cover;
-            background-position: center;
-            border-radius: var(--border-radius);
-            animation: heroZoom 20s ease-in-out infinite;
+          height: 400px;
+          order: -1;
         }
-        
-        @keyframes heroZoom {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+      }
+
+      .logo-item {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-light);
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 150px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .logo-item:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-medium);
+      }
+
+      .logo-item img {
+        max-width: 100%;
+        max-height: 100px;
+        object-fit: contain;
+        transition: var(--transition);
+      }
+
+      .logo-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .logo-item.devpipeline {
+        background: #000000;
+      }
+
+      .logo-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(58, 175, 170, 0.1),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .logo-item:hover::before {
+        left: 100%;
+      }
+
+      .floating-logos {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+        background: var(--light-gray);
+        margin: 2rem 0;
+      }
+
+      .floating-logo {
+        position: absolute;
+        opacity: 0.7;
+        animation: float 20s infinite linear;
+        transition: var(--transition);
+      }
+
+      .floating-logo:hover {
+        opacity: 1;
+        transform: scale(1.2);
+        z-index: 10;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
         }
-        
+        100% {
+          transform: translateY(-100px) rotate(360deg);
+        }
+      }
+
+      .logo-item:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .logo-item:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+      .logo-item:nth-child(3) {
+        animation-delay: 1s;
+      }
+      .logo-item:nth-child(4) {
+        animation-delay: 1.5s;
+      }
+      .logo-item:nth-child(5) {
+        animation-delay: 2s;
+      }
+      .logo-item:nth-child(6) {
+        animation-delay: 2.5s;
+      }
+      .logo-item:nth-child(7) {
+        animation-delay: 3s;
+      }
+      .logo-item:nth-child(8) {
+        animation-delay: 3.5s;
+      }
+      .logo-item:nth-child(9) {
+        animation-delay: 4s;
+      }
+      .logo-item:nth-child(10) {
+        animation-delay: 4.5s;
+      }
+      .logo-item:nth-child(11) {
+        animation-delay: 5s;
+      }
+      .logo-item:nth-child(12) {
+        animation-delay: 5.5s;
+      }
+
+      .client-testimonials {
+        background: var(--white);
+        padding: 4rem 0;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+      }
+
+      .testimonial-card {
+        background: var(--light-gray);
+        padding: 2.5rem;
+        border-radius: var(--border-radius);
+        border-left: 4px solid var(--primary-teal);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .testimonial-logo {
+        width: 80px;
+        height: 60px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+      }
+
+      .industries-section {
+        background: var(--gradient-accent);
+        color: var(--white);
+        padding: 4rem 0;
+        text-align: center;
+      }
+
+      .industry-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .industry-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        backdrop-filter: blur(10px);
+      }
+
+      .service-detail {
+        padding: 6rem 0;
+      }
+
+      .service-detail-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: center;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 5vw;
+      }
+
+      .service-image {
+        width: 100%;
+        height: 500px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow-medium);
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f8f9fa;
+      }
+
+      .service-image:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-heavy);
+      }
+
+      .service-image img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+        padding: 2rem;
+      }
+
+      .service-detail-text h2 {
+        color: var(--dark);
+        margin-bottom: 2rem;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        text-transform: none;
+        letter-spacing: -0.03em;
+      }
+
+      .service-detail-text p {
+        font-size: clamp(1.1rem, 2vw, 1.4rem);
+        margin-bottom: 2rem;
+        color: #7f8c8d;
+        line-height: 1.6;
+      }
+
+      .service-features-list {
+        list-style: none;
+        margin-top: 2rem;
+      }
+
+      .service-features-list li {
+        padding: 1rem 0;
+        color: var(--dark);
+        position: relative;
+        padding-left: 2rem;
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
+        font-weight: 500;
+        border-bottom: 1px solid rgba(58, 175, 170, 0.2);
+      }
+
+      .service-features-list li:last-child {
+        border-bottom: none;
+      }
+
+      .service-features-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 10px;
+        background: var(--teal);
+        border-radius: 50%;
+      }
+
+      @media (max-width: 768px) {
         .clients-hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            margin-bottom: 2rem;
-            color: var(--white);
-            line-height: 0.9;
-            font-weight: 700;
-            text-transform: none;
-            letter-spacing: -0.03em;
-            animation: fadeInUp 1s ease-out;
+          font-size: 2rem;
         }
-        
-        .clients-hero p {
-            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-            color: rgba(255,255,255,0.9);
-            max-width: 650px;
-            margin: 0 auto 3rem;
-            line-height: 1.4;
-            font-weight: 400;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-        
+
         .logo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            padding: 6rem 0;
-            max-width: 100%;
-            margin: 0 auto;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 1rem;
+          padding: 2rem 0;
         }
-        
-        .clients-hero-content {
-            max-width: 100%;
-            padding: 0;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Mobile responsiveness for clients hero */
-        @media (max-width: 768px) {
-            .clients-hero {
-                padding: 100px 0 60px;
-                min-height: 70vh;
-            }
-            
-            .clients-hero-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                padding: 0 3vw;
-            }
-            
-            .clients-hero-image {
-                height: 400px;
-                order: -1;
-            }
-        }
-        
+
         .logo-item {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 150px;
-            position: relative;
-            overflow: hidden;
+          padding: 1rem;
+          min-height: 120px;
         }
-        
-        .logo-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .logo-item img {
-            max-width: 100%;
-            max-height: 100px;
-            object-fit: contain;
-            transition: var(--transition);
-        }
-        
-        .logo-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .logo-item.devpipeline {
-            background: #000000;
-        }
-        
-        .logo-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(58, 175, 170, 0.1), transparent);
-            transition: left 0.5s;
-        }
-        
-        .logo-item:hover::before {
-            left: 100%;
-        }
-        
-        .floating-logos {
-            position: relative;
-            height: 400px;
-            overflow: hidden;
-            background: var(--light-gray);
-            margin: 2rem 0;
-        }
-        
-        .floating-logo {
-            position: absolute;
-            opacity: 0.7;
-            animation: float 20s infinite linear;
-            transition: var(--transition);
-        }
-        
-        .floating-logo:hover {
-            opacity: 1;
-            transform: scale(1.2);
-            z-index: 10;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-            }
-        }
-        
-        .logo-item:nth-child(1) { animation-delay: 0s; }
-        .logo-item:nth-child(2) { animation-delay: 0.5s; }
-        .logo-item:nth-child(3) { animation-delay: 1s; }
-        .logo-item:nth-child(4) { animation-delay: 1.5s; }
-        .logo-item:nth-child(5) { animation-delay: 2s; }
-        .logo-item:nth-child(6) { animation-delay: 2.5s; }
-        .logo-item:nth-child(7) { animation-delay: 3s; }
-        .logo-item:nth-child(8) { animation-delay: 3.5s; }
-        .logo-item:nth-child(9) { animation-delay: 4s; }
-        .logo-item:nth-child(10) { animation-delay: 4.5s; }
-        .logo-item:nth-child(11) { animation-delay: 5s; }
-        .logo-item:nth-child(12) { animation-delay: 5.5s; }
-        
-        .client-testimonials {
-            background: var(--white);
-            padding: 4rem 0;
-        }
-        
+
         .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+          grid-template-columns: 1fr;
+          gap: 2rem;
         }
-        
+
         .testimonial-card {
-            background: var(--light-gray);
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            border-left: 4px solid var(--primary-teal);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          padding: 2rem;
         }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-        }
-        
-        .testimonial-logo {
-            width: 80px;
-            height: 60px;
-            object-fit: contain;
-            margin-bottom: 1rem;
-        }
-        
-        .industries-section {
-            background: var(--gradient-accent);
-            color: var(--white);
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        .industry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .industry-card {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            backdrop-filter: blur(10px);
-        }
-        
-        .service-detail {
-            padding: 6rem 0;
-        }
-        
+
         .service-detail-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 0 5vw;
+          grid-template-columns: 1fr;
+          gap: 3rem;
+          padding: 0 3vw;
         }
-        
-        .service-image {
-            width: 100%;
-            height: 500px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-medium);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f8f9fa;
-        }
-        
-        .service-image:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-heavy);
-        }
-        
-        .service-image img {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            object-position: center;
-            padding: 2rem;
-        }
-        
-        .service-detail-text h2 {
-            color: var(--dark);
-            margin-bottom: 2rem;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            text-transform: none;
-            letter-spacing: -0.03em;
-        }
-        
-        .service-detail-text p {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            margin-bottom: 2rem;
-            color: #7f8c8d;
-            line-height: 1.6;
-        }
-        
-        .service-features-list {
-            list-style: none;
-            margin-top: 2rem;
-        }
-        
-        .service-features-list li {
-            padding: 1rem 0;
-            color: var(--dark);
-            position: relative;
-            padding-left: 2rem;
-            font-size: clamp(1rem, 1.5vw, 1.2rem);
-            font-weight: 500;
-            border-bottom: 1px solid rgba(58, 175, 170, 0.2);
-        }
-        
-        .service-features-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .service-features-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 10px;
-            height: 10px;
-            background: var(--teal);
-            border-radius: 50%;
-        }
-        
-        @media (max-width: 768px) {
-            .clients-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .logo-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 1rem;
-                padding: 2rem 0;
-            }
-            
-            .logo-item {
-                padding: 1rem;
-                min-height: 120px;
-            }
-            
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .testimonial-card {
-                padding: 2rem;
-            }
-            
-            .service-detail-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                padding: 0 3vw;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header>
-            <div class="header-content">
-                <a href="/" class="logo">
-                <img src="/assets/logos/Salesforce_Consulting_Logo.svg" alt="Salesforce Consultants" style="height: 35px; margin-right: 8px;">
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="/services/">Services</a></li>
-                    <li><a href="/success-stories/">Success Stories</a></li>
-                    <li><a href="/expertise/">Expertise</a></li>
-                    <li><a href="/clients/">Clients</a></li>
-                    <li><a href="/contact/">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="nav-icons">
-                <button class="nav-icon search-icon" aria-label="Search" title="Search">
-                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                </button>
-                <div class="share-dropdown">
-                    <button class="nav-icon share-icon" aria-label="Share" title="Share" onclick="toggleShareDropdown()">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-                    </button>
-                    <div class="share-menu" id="shareMenu">
-                        <div class="share-header">
-                            <span>Share this page</span>
-                            <button class="close-share" onclick="toggleShareDropdown()">×</button>
-                        </div>
-                        <div class="share-options">
-                            <button class="share-option" onclick="copyToClipboard()">
-                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                                Copy Link
-                            </button>
-                            <a href="https://www.linkedin.com/company/salesforce-consultants-io/" class="share-option" target="_blank">
-                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                LinkedIn
-                            </a>
-                            <a href="https://www.facebook.com/profile.php?id=61566535995457" class="share-option" target="_blank">
-                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                                Facebook
-                            </a>
-                            <a href="https://www.instagram.com/salesforceconsultants/" class="share-option" target="_blank">
-                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                                Instagram
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
+      <div class="header-content">
+        <a href="/" class="logo">
+          <img
+            src="/assets/logos/Salesforce_Consulting_Logo.svg"
+            alt="Salesforce Consultants"
+            style="height: 35px; margin-right: 8px"
+          />
+        </a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/success-stories/">Success Stories</a></li>
+            <li><a href="/expertise/">Expertise</a></li>
+            <li><a href="/clients/">Clients</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-icons">
+          <button
+            class="nav-icon search-icon"
+            aria-label="Search"
+            title="Search"
+          >
+            <svg
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+          <div class="share-dropdown">
+            <button
+              class="nav-icon share-icon"
+              aria-label="Share"
+              title="Share"
+              onclick="toggleShareDropdown()"
+            >
+              <svg
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="18" cy="5" r="3" />
+                <circle cx="6" cy="12" r="3" />
+                <circle cx="18" cy="19" r="3" />
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+              </svg>
             </button>
+            <div class="share-menu" id="shareMenu">
+              <div class="share-header">
+                <span>Share this page</span>
+                <button class="close-share" onclick="toggleShareDropdown()">
+                  ×
+                </button>
+              </div>
+              <div class="share-options">
+                <button class="share-option" onclick="copyToClipboard()">
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <rect
+                      x="9"
+                      y="9"
+                      width="13"
+                      height="13"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path
+                      d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                    ></path>
+                  </svg>
+                  Copy Link
+                </button>
+                <a
+                  href="https://www.linkedin.com/company/salesforce-consultants-io/"
+                  class="share-option"
+                  target="_blank"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                  LinkedIn
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61566535995457"
+                  class="share-option"
+                  target="_blank"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                    />
+                  </svg>
+                  Facebook
+                </a>
+                <a
+                  href="https://www.instagram.com/salesforceconsultants/"
+                  class="share-option"
+                  target="_blank"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                  Instagram
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="nav-dropdown" id="nav-dropdown">
-            <a href="/services/">Services</a>
-            <a href="/success-stories/">Success Stories</a>
-            <a href="/expertise/">Expertise</a>
-            <a href="/clients/">Clients</a>
-            <a href="/contact/">Contact</a>
-        </div>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </button>
+      </div>
+      <div class="nav-dropdown" id="nav-dropdown">
+        <a href="/services/">Services</a>
+        <a href="/success-stories/">Success Stories</a>
+        <a href="/expertise/">Expertise</a>
+        <a href="/clients/">Clients</a>
+        <a href="/contact/">Contact</a>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="clients-hero">
-        <div class="clients-hero-container">
-            <div class="clients-hero-content">
-                <h1>Trusted by Leading Organizations</h1>
-                <p>From nonprofits to Fortune 500 companies, organizations across industries choose SalesforceConsultants.io for their Salesforce success</p>
-            </div>
-            
-            <div class="clients-hero-image"></div>
+      <div class="clients-hero-container">
+        <div class="clients-hero-content">
+          <h1>Trusted by Leading Organizations</h1>
+          <p>
+            From nonprofits to Fortune 500 companies, organizations across
+            industries choose SalesforceConsultants.io for their Salesforce
+            success
+          </p>
         </div>
+
+        <div class="clients-hero-image"></div>
+      </div>
     </section>
 
     <!-- Client Logos Grid -->
     <section class="clients-section">
-        <div class="container">
-            <div class="section-header">
-                                    <h2 class="section-title">Employer Partners</h2>
-                <p class="section-subtitle">Organizations that trust us with their Salesforce transformation</p>
-            </div>
-            
-            <div class="logo-grid">
-                <div class="logo-item">
-                    <img src="/assets/LA Chamber Logo 2.jpg" alt="LA Chamber of Commerce">
-                </div>
-                <div class="logo-item devpipeline">
-                    <img src="/assets/logos/devpipeline-white-logo.png" alt="DevPipeline">
-                </div>
-
-                <div class="logo-item">
-                    <img src="/assets/logos/polaris-logo.png" alt="Polaris">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/solution-reach-logo.jpeg" alt="SolutionReach">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/Vernal City Logo.png" alt="Vernal City">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/Basin_I&E_4.png" alt="Basin I&E">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/alpine-100-logo.png" alt="Alpine 100">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/bhi-logo.png" alt="BHI">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/ctl-logo.svg" alt="CTL">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/dol-logo.png" alt="Department of Labor">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/famlinc-logo.png" alt="FAMLINC">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/hub-logo.png" alt="Hub">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/intellipay-logo.png" alt="IntelliPay">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/midlera-logo.jpeg" alt="Midlera">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/snow-college-logo.png" alt="Snow College">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/wodobo-logo.png" alt="Wodobo">
-                </div>
-                <div class="logo-item">
-                    <img src="/assets/logos/zblogo.png" alt="Zero Barriers">
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Employer Partners</h2>
+          <p class="section-subtitle">
+            Organizations that trust us with their Salesforce transformation
+          </p>
         </div>
+
+        <div class="logo-grid">
+          <div class="logo-item">
+            <img
+              src="/assets/LA Chamber Logo 2.jpg"
+              alt="LA Chamber of Commerce"
+            />
+          </div>
+          <div class="logo-item devpipeline">
+            <img
+              src="/assets/logos/devpipeline-white-logo.png"
+              alt="DevPipeline"
+            />
+          </div>
+
+          <div class="logo-item">
+            <img src="/assets/logos/polaris-logo.png" alt="Polaris" />
+          </div>
+          <div class="logo-item">
+            <img
+              src="/assets/logos/solution-reach-logo.jpeg"
+              alt="SolutionReach"
+            />
+          </div>
+          <div class="logo-item">
+            <img src="/assets/logos/Vernal City Logo.png" alt="Vernal City" />
+          </div>
+          <div class="logo-item">
+            <img src="/assets/logos/Basin_I&E_4.png" alt="Basin I&E" />
+          </div>
+          <div class="logo-item">
+            <img src="/assets/logos/alpine-100-logo.png" alt="Alpine 100" />
+          </div>
+          <div class="logo-item">
+            <img src="/assets/logos/bhi-logo.png" alt="BHI" />
+          </div>
+          <div class="logo-item">
+            <img src="/assets/logos/ctl-logo.svg" alt="CTL" />
+          </div>
+          <div class="logo-item">
+            <img src="/assets/logos/dol-logo.png" alt="Department of Labor" />
+          </div>
+          <div class="logo-item">
+            <img src="/assets/logos/famlinc-logo.png" alt="FAMLINC" />
+          </div>
+          <div class="logo-item">
+            <img src="/assets/logos/hub-logo.png" alt="Hub" />
+          </div>
+          <div class="logo-item">
+            <img src="/assets/logos/intellipay-logo.png" alt="IntelliPay" />
+          </div>
+          <div class="logo-item">
+            <img src="/assets/logos/midlera-logo.jpeg" alt="Midlera" />
+          </div>
+          <div class="logo-item">
+            <img src="/assets/logos/snow-college-logo.png" alt="Snow College" />
+          </div>
+          <div class="logo-item">
+            <img src="/assets/logos/wodobo-logo.png" alt="Wodobo" />
+          </div>
+          <div class="logo-item">
+            <img src="/assets/logos/zblogo.png" alt="Zero Barriers" />
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Salesforce for Nonprofits -->
-    <section id="nonprofits" class="service-detail" style="background: var(--light-gray);">
-        <div class="container">
-            <div class="service-detail-content">
-                <div class="service-detail-text">
-                    <h2>Salesforce for Nonprofits</h2>
-                    <p>Empower your mission with specialized Salesforce Nonprofit Cloud and NPSP solutions designed specifically for nonprofit organizations. Our certified nonprofit consultants understand the unique challenges and opportunities facing mission-driven organizations.</p>
-                    <ul class="service-features-list">
-                        <li>Salesforce Nonprofit Cloud & NPSP implementation</li>
-                        <li>Donor management and fundraising automation</li>
-                        <li>Grant tracking and program management</li>
-                        <li>Volunteer coordination and management</li>
-                        <li>Constituent relationship management</li>
-                        <li>Nonprofit reporting and compliance</li>
-                        <li>Event management and registration</li>
-                        <li>Mission-driven Salesforce customization</li>
-                    </ul>
-                    <div style="margin-top: 2rem;">
-                        <a href="/contact/" class="btn-primary">Transform Your Nonprofit</a>
-                    </div>
-                </div>
-                <div class="service-image">
-                    <img src="/assets/LA Chamber Logo 2.jpg" alt="Salesforce for Nonprofits">
-                </div>
+    <section
+      id="nonprofits"
+      class="service-detail"
+      style="background: var(--light-gray)"
+    >
+      <div class="container">
+        <div class="service-detail-content">
+          <div class="service-detail-text">
+            <h2>Salesforce for Nonprofits</h2>
+            <p>
+              Empower your mission with specialized Salesforce Nonprofit Cloud
+              and NPSP solutions designed specifically for nonprofit
+              organizations. Our certified nonprofit consultants understand the
+              unique challenges and opportunities facing mission-driven
+              organizations.
+            </p>
+            <ul class="service-features-list">
+              <li>Salesforce Nonprofit Cloud & NPSP implementation</li>
+              <li>Donor management and fundraising automation</li>
+              <li>Grant tracking and program management</li>
+              <li>Volunteer coordination and management</li>
+              <li>Constituent relationship management</li>
+              <li>Nonprofit reporting and compliance</li>
+              <li>Event management and registration</li>
+              <li>Mission-driven Salesforce customization</li>
+            </ul>
+            <div style="margin-top: 2rem">
+              <a href="/contact/" class="btn-primary"
+                >Transform Your Nonprofit</a
+              >
             </div>
+          </div>
+          <div class="service-image">
+            <img
+              src="/assets/LA Chamber Logo 2.jpg"
+              alt="Salesforce for Nonprofits"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Salesforce for Businesses -->
     <section id="businesses" class="service-detail">
-        <div class="container">
-            <div class="service-detail-content">
-                <div class="service-image">
-                    <img src="/assets/Business Solutions.jpg" alt="Salesforce for Businesses">
-                </div>
-                <div class="service-detail-text">
-                    <h2>Salesforce for Businesses</h2>
-                    <p>Accelerate your business growth with comprehensive Salesforce solutions tailored to your industry and business model. From startups to enterprise organizations, we deliver scalable solutions that drive measurable ROI.</p>
-                    <ul class="service-features-list">
-                        <li>Sales Cloud optimization and automation</li>
-                        <li>Service Cloud implementation and support</li>
-                        <li>Marketing Cloud and campaign management</li>
-                        <li>Customer journey mapping and optimization</li>
-                        <li>Sales process automation and analytics</li>
-                        <li>Lead management and conversion optimization</li>
-                        <li>Customer service automation</li>
-                        <li>Business intelligence and reporting</li>
-                    </ul>
-                    <div style="margin-top: 2rem;">
-                        <a href="/contact/" class="btn-primary">Scale Your Business</a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="service-detail-content">
+          <div class="service-image">
+            <img
+              src="/assets/Business Solutions.jpg"
+              alt="Salesforce for Businesses"
+            />
+          </div>
+          <div class="service-detail-text">
+            <h2>Salesforce for Businesses</h2>
+            <p>
+              Accelerate your business growth with comprehensive Salesforce
+              solutions tailored to your industry and business model. From
+              startups to enterprise organizations, we deliver scalable
+              solutions that drive measurable ROI.
+            </p>
+            <ul class="service-features-list">
+              <li>Sales Cloud optimization and automation</li>
+              <li>Service Cloud implementation and support</li>
+              <li>Marketing Cloud and campaign management</li>
+              <li>Customer journey mapping and optimization</li>
+              <li>Sales process automation and analytics</li>
+              <li>Lead management and conversion optimization</li>
+              <li>Customer service automation</li>
+              <li>Business intelligence and reporting</li>
+            </ul>
+            <div style="margin-top: 2rem">
+              <a href="/contact/" class="btn-primary">Scale Your Business</a>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Industries We Serve -->
-    <section class="industries-section" style="background: linear-gradient(135deg, var(--dark) 0%, var(--teal) 100%); padding: 6rem 0; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.02); pointer-events: none;"></div>
-        <div class="container" style="position: relative; z-index: 2;">
-            <div class="section-header">
-                <h2 class="section-title" style="color: white;">Industries We Serve</h2>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Our Salesforce expertise spans across diverse industries and organization types</p>
-            </div>
-            
-            <div class="industry-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 4rem;">
-                <div class="benefit-item" style="background: rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 16px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                    <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.4rem; font-weight: 700;">Nonprofit Organizations</h3>
-                    <p style="color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Specialized Salesforce Nonprofit Cloud and NPSP implementation for mission-driven organizations</p>
-                </div>
-                <div class="benefit-item" style="background: rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 16px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                    <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.4rem; font-weight: 700;">Chambers of Commerce</h3>
-                    <p style="color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Multi-departmental Salesforce solutions for membership management and business development</p>
-                </div>
-                <div class="benefit-item" style="background: rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 16px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                    <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.4rem; font-weight: 700;">Higher Education</h3>
-                    <p style="color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Salesforce solutions for student management, alumni relations, and institutional advancement</p>
-                </div>
-                <div class="benefit-item" style="background: rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 16px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                    <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.4rem; font-weight: 700;">Healthcare & Life Sciences</h3>
-                    <p style="color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Compliant Salesforce implementations for healthcare providers and life sciences companies</p>
-                </div>
-                <div class="benefit-item" style="background: rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 16px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                    <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.4rem; font-weight: 700;">Financial Services</h3>
-                    <p style="color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Secure Salesforce solutions for banking, insurance, and financial technology companies</p>
-                </div>
-                <div class="benefit-item" style="background: rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 16px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                    <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.4rem; font-weight: 700;">Government Agencies</h3>
-                    <p style="color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Public sector Salesforce implementations with security and compliance requirements</p>
-                </div>
-            </div>
+    <section
+      class="industries-section"
+      style="
+        background: linear-gradient(135deg, var(--dark) 0%, var(--teal) 100%);
+        padding: 6rem 0;
+        position: relative;
+        overflow: hidden;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(255, 255, 255, 0.02);
+          pointer-events: none;
+        "
+      ></div>
+      <div class="container" style="position: relative; z-index: 2">
+        <div class="section-header">
+          <h2 class="section-title" style="color: white">
+            Industries We Serve
+          </h2>
+          <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9)">
+            Our Salesforce expertise spans across diverse industries and
+            organization types
+          </p>
         </div>
+
+        <div
+          class="industry-grid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+          "
+        >
+          <div
+            class="benefit-item"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              padding: 2.5rem;
+              border-radius: 16px;
+              backdrop-filter: blur(10px);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+          >
+            <h3
+              style="
+                color: white;
+                margin-bottom: 1.5rem;
+                font-size: 1.4rem;
+                font-weight: 700;
+              "
+            >
+              Nonprofit Organizations
+            </h3>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.9);
+                line-height: 1.6;
+                margin: 0;
+              "
+            >
+              Specialized Salesforce Nonprofit Cloud and NPSP implementation for
+              mission-driven organizations
+            </p>
+          </div>
+          <div
+            class="benefit-item"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              padding: 2.5rem;
+              border-radius: 16px;
+              backdrop-filter: blur(10px);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+          >
+            <h3
+              style="
+                color: white;
+                margin-bottom: 1.5rem;
+                font-size: 1.4rem;
+                font-weight: 700;
+              "
+            >
+              Chambers of Commerce
+            </h3>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.9);
+                line-height: 1.6;
+                margin: 0;
+              "
+            >
+              Multi-departmental Salesforce solutions for membership management
+              and business development
+            </p>
+          </div>
+          <div
+            class="benefit-item"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              padding: 2.5rem;
+              border-radius: 16px;
+              backdrop-filter: blur(10px);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+          >
+            <h3
+              style="
+                color: white;
+                margin-bottom: 1.5rem;
+                font-size: 1.4rem;
+                font-weight: 700;
+              "
+            >
+              Higher Education
+            </h3>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.9);
+                line-height: 1.6;
+                margin: 0;
+              "
+            >
+              Salesforce solutions for student management, alumni relations, and
+              institutional advancement
+            </p>
+          </div>
+          <div
+            class="benefit-item"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              padding: 2.5rem;
+              border-radius: 16px;
+              backdrop-filter: blur(10px);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+          >
+            <h3
+              style="
+                color: white;
+                margin-bottom: 1.5rem;
+                font-size: 1.4rem;
+                font-weight: 700;
+              "
+            >
+              Healthcare & Life Sciences
+            </h3>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.9);
+                line-height: 1.6;
+                margin: 0;
+              "
+            >
+              Compliant Salesforce implementations for healthcare providers and
+              life sciences companies
+            </p>
+          </div>
+          <div
+            class="benefit-item"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              padding: 2.5rem;
+              border-radius: 16px;
+              backdrop-filter: blur(10px);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+          >
+            <h3
+              style="
+                color: white;
+                margin-bottom: 1.5rem;
+                font-size: 1.4rem;
+                font-weight: 700;
+              "
+            >
+              Financial Services
+            </h3>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.9);
+                line-height: 1.6;
+                margin: 0;
+              "
+            >
+              Secure Salesforce solutions for banking, insurance, and financial
+              technology companies
+            </p>
+          </div>
+          <div
+            class="benefit-item"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              padding: 2.5rem;
+              border-radius: 16px;
+              backdrop-filter: blur(10px);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+          >
+            <h3
+              style="
+                color: white;
+                margin-bottom: 1.5rem;
+                font-size: 1.4rem;
+                font-weight: 700;
+              "
+            >
+              Government Agencies
+            </h3>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.9);
+                line-height: 1.6;
+                margin: 0;
+              "
+            >
+              Public sector Salesforce implementations with security and
+              compliance requirements
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Client Testimonials -->
     <section class="client-testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Powerful Client Testimonials</h2>
-                <p class="section-subtitle">Real feedback from organizations we've helped transform with Salesforce</p>
-            </div>
-            
-            <div class="testimonial-grid">
-                <div class="benefit-item">
-                    <h4 style="text-align: center; color: var(--accent-gold); font-size: 1.2rem; margin: 0 0 1rem 0; padding: 1rem; background: rgba(217, 119, 6, 0.1); border-radius: var(--border-radius); border-left: 4px solid var(--accent-gold);">
-                        Salesforce Admin Training Success
-                    </h4>
-                    <div class="testimonial-text">
-                        "Our Salesforce consultants trained our in-house admin and worked closely with them on projects requiring advanced technical skills. Our entire team now has a better understanding of the Salesforce platform."
-                    </div>
-                    <div class="testimonial-author">Janice, In-House Salesforce Admin</div>
-                    <div class="testimonial-title">Salesforce Admin Training & Support</div>
-                </div>
-                
-                <div class="benefit-item">
-                    <h4 style="text-align: center; color: var(--accent-gold); font-size: 1.2rem; margin: 0 0 1rem 0; padding: 1rem; background: rgba(217, 119, 6, 0.1); border-radius: var(--border-radius); border-left: 4px solid var(--accent-gold);">
-                        Salesforce Optimization Excellence
-                    </h4>
-                    <div class="testimonial-text">
-                        "Our Salesforce consultants provided an amazing experience and quality customer service. We're now achieving our goal of optimizing Salesforce for our unique needs."
-                    </div>
-                    <div class="testimonial-author">Pat, Non-Profit Executive</div>
-                    <div class="testimonial-title">Salesforce Optimization Services</div>
-                </div>
-                
-                <div class="benefit-item">
-                    <h4 style="text-align: center; color: var(--accent-gold); font-size: 1.2rem; margin: 0 0 1rem 0; padding: 1rem; background: rgba(217, 119, 6, 0.1); border-radius: var(--border-radius); border-left: 4px solid var(--accent-gold);">
-                        Salesforce Integration Success
-                    </h4>
-                    <div class="testimonial-text">
-                        "Our Salesforce consultants integrated Salesforce with our accounting system and event platform, giving us complete visibility of our member relationships and dramatically improving efficiency."
-                    </div>
-                    <div class="testimonial-author">Brian, Membership Director</div>
-                    <div class="testimonial-title">Salesforce Integration Solutions</div>
-                </div>
-                
-                <div class="benefit-item">
-                    <h4 style="text-align: center; color: var(--accent-gold); font-size: 1.2rem; margin: 0 0 1rem 0; padding: 1rem; background: rgba(217, 119, 6, 0.1); border-radius: var(--border-radius); border-left: 4px solid var(--accent-gold);">
-                        Workflow Automation Results
-                    </h4>
-                    <div class="testimonial-text">
-                        "The automation workflows our Salesforce consultants created have saved countless hours of manual work. Our team now focuses on strategic activities instead of repetitive tasks."
-                    </div>
-                    <div class="testimonial-author">Non-profit IT Manager</div>
-                    <div class="testimonial-title">Salesforce Workflow Automation</div>
-                </div>
-                
-                <div class="benefit-item">
-                    <h4 style="text-align: center; color: var(--accent-gold); font-size: 1.2rem; margin: 0 0 1rem 0; padding: 1rem; background: rgba(217, 119, 6, 0.1); border-radius: var(--border-radius); border-left: 4px solid var(--accent-gold);">
-                        Seamless Data Migration
-                    </h4>
-                    <div class="testimonial-text">
-                        "Our Salesforce consultants managed our complex migration from our outdated CRM with remarkable skill. We experienced zero data loss and minimal disruption."
-                    </div>
-                    <div class="testimonial-author">Martin, Chief Operating Officer</div>
-                    <div class="testimonial-title">Salesforce Data Migration Services</div>
-                </div>
-                
-                <div class="benefit-item">
-                    <h4 style="text-align: center; color: var(--accent-gold); font-size: 1.2rem; margin: 0 0 1rem 0; padding: 1rem; background: rgba(217, 119, 6, 0.1); border-radius: var(--border-radius); border-left: 4px solid var(--accent-gold);">
-                        Nonprofit Transformation
-                    </h4>
-                    <div class="testimonial-text">
-                        "Our Salesforce consultants transformed our donor management. We now have a 360-degree view of our supporters, which has increased donor retention by 35%."
-                    </div>
-                    <div class="testimonial-author">Nonprofit Executive Director</div>
-                    <div class="testimonial-title">Nonprofit Salesforce Implementation</div>
-                </div>
-                
-                <div class="benefit-item">
-                    <h4 style="text-align: center; color: var(--accent-gold); font-size: 1.2rem; margin: 0 0 1rem 0; padding: 1rem; background: rgba(217, 119, 6, 0.1); border-radius: var(--border-radius); border-left: 4px solid var(--accent-gold);">
-                        Sales Performance Boost
-                    </h4>
-                    <div class="testimonial-text">
-                        "Our Salesforce consultants' business-focused approach gave us a competitive edge. Our sales cycle is 28% shorter, and team productivity has increased dramatically."
-                    </div>
-                    <div class="testimonial-author">LA Marketing Company, VP Sales</div>
-                    <div class="testimonial-title">Salesforce Sales Cloud Optimization</div>
-                </div>
-                
-                <div class="benefit-item">
-                    <img src="/assets/LA Chamber Logo 2.jpg" alt="LA Chamber" class="testimonial-logo">
-                    <div class="testimonial-text">
-                        "DevPipeline was highly responsive & worked closely with various members of the Chamber Team to get a holistic look at what we were missing and implement fixes that work for all departments. The previous Salesforce consultants were not highly responsive to our needs and didn't collaborate with us on our fixes."
-                    </div>
-                    <div class="testimonial-author">Brian, Membership Director</div>
-                    <div class="testimonial-title">Salesforce Integration Solutions</div>
-                </div>
-                
-                <div class="benefit-item">
-                    <h4 style="text-align: center; color: var(--accent-gold); font-size: 1.2rem; margin: 0 0 1rem 0; padding: 1rem; background: rgba(217, 119, 6, 0.1); border-radius: var(--border-radius); border-left: 4px solid var(--accent-gold);">
-                        Advanced Technical Training
-                    </h4>
-                    <div class="testimonial-text">
-                        "Our Salesforce consultants helped train the in-house Salesforce Admins and worked closely with them on handling projects that required technical skills beyond their expertise."
-                    </div>
-                    <div class="testimonial-author">Janice A., In-House Salesforce Admin</div>
-                    <div class="testimonial-title">Salesforce Technical Training</div>
-                </div>
-                
-                <div class="benefit-item">
-                    <h4 style="text-align: center; color: var(--accent-orange); font-size: 1.2rem; margin: 0 0 1rem 0; padding: 1rem; background: rgba(255, 165, 0, 0.1); border-radius: var(--border-radius); border-left: 4px solid var(--accent-orange);">
-                        Exceptional Problem Solving
-                    </h4>
-                    <div class="testimonial-text">
-                        "Ridiculously Awesome is what comes to mind when I think about our Salesforce consultant. I'm always impressed when they set out to solve problems as they always seem to solve them quickly and better than I first imagined."
-                    </div>
-                    <div class="testimonial-author">Matt, Salesforce Architect</div>
-                    <div class="testimonial-title">Salesforce Problem Solving</div>
-                </div>
-                
-                <div class="benefit-item">
-                    <h4 style="text-align: center; color: var(--accent-orange); font-size: 1.2rem; margin: 0 0 1rem 0; padding: 1rem; background: rgba(255, 165, 0, 0.1); border-radius: var(--border-radius); border-left: 4px solid var(--accent-orange);">
-                        Expert Technical Solutions
-                    </h4>
-                    <div class="testimonial-text">
-                        "Our Salesforce consultant is one of the brightest people I know. They were always quick to find intelligent solutions to difficult problems and pick up on new concepts quickly."
-                    </div>
-                    <div class="testimonial-author">Jason, speaking of team member Matt</div>
-                    <div class="testimonial-title">Salesforce Consulting Expertise</div>
-                </div>
-            </div>
-            
-            <div class="service-portfolio-highlights" style="margin-top: 4rem; padding: 3rem; background: linear-gradient(135deg, rgba(58, 175, 170, 0.08) 0%, rgba(23, 43, 59, 0.05) 100%); border-radius: 20px; border: 1px solid rgba(58, 175, 170, 0.1); backdrop-filter: blur(10px);">
-                <h3 style="color: var(--dark); margin-bottom: 2rem; font-size: 1.8rem; font-weight: 700; text-align: center;">Service Portfolio Highlights</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                    <div style="background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--teal); transition: all 0.3s ease; backdrop-filter: blur(5px);">
-                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                            <svg width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.8rem;">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                            <span style="font-weight: 600; color: var(--dark);">Discovery meetings & solution architecture</span>
-                        </div>
-                    </div>
-                    
-                    <div style="background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--teal); transition: all 0.3s ease; backdrop-filter: blur(5px);">
-                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                            <svg width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.8rem;">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                            <span style="font-weight: 600; color: var(--dark);">Salesforce integration services</span>
-                        </div>
-                    </div>
-                    
-                    <div style="background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--teal); transition: all 0.3s ease; backdrop-filter: blur(5px);">
-                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                            <svg width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.8rem;">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                            <span style="font-weight: 600; color: var(--dark);">Ongoing email and phone support from senior certified consultants</span>
-                        </div>
-                    </div>
-                    
-                    <div style="background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--teal); transition: all 0.3s ease; backdrop-filter: blur(5px);">
-                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                            <svg width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.8rem;">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                            <span style="font-weight: 600; color: var(--dark);">Comprehensive Salesforce training and "Train the Trainer" programs</span>
-                        </div>
-                    </div>
-                    
-                    <div style="background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--teal); transition: all 0.3s ease; backdrop-filter: blur(5px);">
-                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                            <svg width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.8rem;">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                            <span style="font-weight: 600; color: var(--dark);">Web conference and phone-based training sessions</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Powerful Client Testimonials</h2>
+          <p class="section-subtitle">
+            Real feedback from organizations we've helped transform with
+            Salesforce
+          </p>
         </div>
+
+        <div class="testimonial-grid">
+          <div class="benefit-item">
+            <h4
+              style="
+                text-align: center;
+                color: var(--accent-gold);
+                font-size: 1.2rem;
+                margin: 0 0 1rem 0;
+                padding: 1rem;
+                background: rgba(217, 119, 6, 0.1);
+                border-radius: var(--border-radius);
+                border-left: 4px solid var(--accent-gold);
+              "
+            >
+              Salesforce Admin Training Success
+            </h4>
+            <div class="testimonial-text">
+              "Our Salesforce consultants trained our in-house admin and worked
+              closely with them on projects requiring advanced technical skills.
+              Our entire team now has a better understanding of the Salesforce
+              platform."
+            </div>
+            <div class="testimonial-author">
+              Janice, In-House Salesforce Admin
+            </div>
+            <div class="testimonial-title">
+              Salesforce Admin Training & Support
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <h4
+              style="
+                text-align: center;
+                color: var(--accent-gold);
+                font-size: 1.2rem;
+                margin: 0 0 1rem 0;
+                padding: 1rem;
+                background: rgba(217, 119, 6, 0.1);
+                border-radius: var(--border-radius);
+                border-left: 4px solid var(--accent-gold);
+              "
+            >
+              Salesforce Optimization Excellence
+            </h4>
+            <div class="testimonial-text">
+              "Our Salesforce consultants provided an amazing experience and
+              quality customer service. We're now achieving our goal of
+              optimizing Salesforce for our unique needs."
+            </div>
+            <div class="testimonial-author">Pat, Non-Profit Executive</div>
+            <div class="testimonial-title">
+              Salesforce Optimization Services
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <h4
+              style="
+                text-align: center;
+                color: var(--accent-gold);
+                font-size: 1.2rem;
+                margin: 0 0 1rem 0;
+                padding: 1rem;
+                background: rgba(217, 119, 6, 0.1);
+                border-radius: var(--border-radius);
+                border-left: 4px solid var(--accent-gold);
+              "
+            >
+              Salesforce Integration Success
+            </h4>
+            <div class="testimonial-text">
+              "Our Salesforce consultants integrated Salesforce with our
+              accounting system and event platform, giving us complete
+              visibility of our member relationships and dramatically improving
+              efficiency."
+            </div>
+            <div class="testimonial-author">Brian, Membership Director</div>
+            <div class="testimonial-title">
+              Salesforce Integration Solutions
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <h4
+              style="
+                text-align: center;
+                color: var(--accent-gold);
+                font-size: 1.2rem;
+                margin: 0 0 1rem 0;
+                padding: 1rem;
+                background: rgba(217, 119, 6, 0.1);
+                border-radius: var(--border-radius);
+                border-left: 4px solid var(--accent-gold);
+              "
+            >
+              Workflow Automation Results
+            </h4>
+            <div class="testimonial-text">
+              "The automation workflows our Salesforce consultants created have
+              saved countless hours of manual work. Our team now focuses on
+              strategic activities instead of repetitive tasks."
+            </div>
+            <div class="testimonial-author">Non-profit IT Manager</div>
+            <div class="testimonial-title">Salesforce Workflow Automation</div>
+          </div>
+
+          <div class="benefit-item">
+            <h4
+              style="
+                text-align: center;
+                color: var(--accent-gold);
+                font-size: 1.2rem;
+                margin: 0 0 1rem 0;
+                padding: 1rem;
+                background: rgba(217, 119, 6, 0.1);
+                border-radius: var(--border-radius);
+                border-left: 4px solid var(--accent-gold);
+              "
+            >
+              Seamless Data Migration
+            </h4>
+            <div class="testimonial-text">
+              "Our Salesforce consultants managed our complex migration from our
+              outdated CRM with remarkable skill. We experienced zero data loss
+              and minimal disruption."
+            </div>
+            <div class="testimonial-author">
+              Martin, Chief Operating Officer
+            </div>
+            <div class="testimonial-title">
+              Salesforce Data Migration Services
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <h4
+              style="
+                text-align: center;
+                color: var(--accent-gold);
+                font-size: 1.2rem;
+                margin: 0 0 1rem 0;
+                padding: 1rem;
+                background: rgba(217, 119, 6, 0.1);
+                border-radius: var(--border-radius);
+                border-left: 4px solid var(--accent-gold);
+              "
+            >
+              Nonprofit Transformation
+            </h4>
+            <div class="testimonial-text">
+              "Our Salesforce consultants transformed our donor management. We
+              now have a 360-degree view of our supporters, which has increased
+              donor retention by 35%."
+            </div>
+            <div class="testimonial-author">Nonprofit Executive Director</div>
+            <div class="testimonial-title">
+              Nonprofit Salesforce Implementation
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <h4
+              style="
+                text-align: center;
+                color: var(--accent-gold);
+                font-size: 1.2rem;
+                margin: 0 0 1rem 0;
+                padding: 1rem;
+                background: rgba(217, 119, 6, 0.1);
+                border-radius: var(--border-radius);
+                border-left: 4px solid var(--accent-gold);
+              "
+            >
+              Sales Performance Boost
+            </h4>
+            <div class="testimonial-text">
+              "Our Salesforce consultants' business-focused approach gave us a
+              competitive edge. Our sales cycle is 28% shorter, and team
+              productivity has increased dramatically."
+            </div>
+            <div class="testimonial-author">LA Marketing Company, VP Sales</div>
+            <div class="testimonial-title">
+              Salesforce Sales Cloud Optimization
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <img
+              src="/assets/LA Chamber Logo 2.jpg"
+              alt="LA Chamber"
+              class="testimonial-logo"
+            />
+            <div class="testimonial-text">
+              "DevPipeline was highly responsive & worked closely with various
+              members of the Chamber Team to get a holistic look at what we were
+              missing and implement fixes that work for all departments. The
+              previous Salesforce consultants were not highly responsive to our
+              needs and didn't collaborate with us on our fixes."
+            </div>
+            <div class="testimonial-author">Brian, Membership Director</div>
+            <div class="testimonial-title">
+              Salesforce Integration Solutions
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <h4
+              style="
+                text-align: center;
+                color: var(--accent-gold);
+                font-size: 1.2rem;
+                margin: 0 0 1rem 0;
+                padding: 1rem;
+                background: rgba(217, 119, 6, 0.1);
+                border-radius: var(--border-radius);
+                border-left: 4px solid var(--accent-gold);
+              "
+            >
+              Advanced Technical Training
+            </h4>
+            <div class="testimonial-text">
+              "Our Salesforce consultants helped train the in-house Salesforce
+              Admins and worked closely with them on handling projects that
+              required technical skills beyond their expertise."
+            </div>
+            <div class="testimonial-author">
+              Janice A., In-House Salesforce Admin
+            </div>
+            <div class="testimonial-title">Salesforce Technical Training</div>
+          </div>
+
+          <div class="benefit-item">
+            <h4
+              style="
+                text-align: center;
+                color: var(--accent-orange);
+                font-size: 1.2rem;
+                margin: 0 0 1rem 0;
+                padding: 1rem;
+                background: rgba(255, 165, 0, 0.1);
+                border-radius: var(--border-radius);
+                border-left: 4px solid var(--accent-orange);
+              "
+            >
+              Exceptional Problem Solving
+            </h4>
+            <div class="testimonial-text">
+              "Ridiculously Awesome is what comes to mind when I think about our
+              Salesforce consultant. I'm always impressed when they set out to
+              solve problems as they always seem to solve them quickly and
+              better than I first imagined."
+            </div>
+            <div class="testimonial-author">Matt, Salesforce Architect</div>
+            <div class="testimonial-title">Salesforce Problem Solving</div>
+          </div>
+
+          <div class="benefit-item">
+            <h4
+              style="
+                text-align: center;
+                color: var(--accent-orange);
+                font-size: 1.2rem;
+                margin: 0 0 1rem 0;
+                padding: 1rem;
+                background: rgba(255, 165, 0, 0.1);
+                border-radius: var(--border-radius);
+                border-left: 4px solid var(--accent-orange);
+              "
+            >
+              Expert Technical Solutions
+            </h4>
+            <div class="testimonial-text">
+              "Our Salesforce consultant is one of the brightest people I know.
+              They were always quick to find intelligent solutions to difficult
+              problems and pick up on new concepts quickly."
+            </div>
+            <div class="testimonial-author">
+              Jason, speaking of team member Matt
+            </div>
+            <div class="testimonial-title">Salesforce Consulting Expertise</div>
+          </div>
+        </div>
+
+        <div
+          class="service-portfolio-highlights"
+          style="
+            margin-top: 4rem;
+            padding: 3rem;
+            background: linear-gradient(
+              135deg,
+              rgba(58, 175, 170, 0.08) 0%,
+              rgba(23, 43, 59, 0.05) 100%
+            );
+            border-radius: 20px;
+            border: 1px solid rgba(58, 175, 170, 0.1);
+            backdrop-filter: blur(10px);
+          "
+        >
+          <h3
+            style="
+              color: var(--dark);
+              margin-bottom: 2rem;
+              font-size: 1.8rem;
+              font-weight: 700;
+              text-align: center;
+            "
+          >
+            Service Portfolio Highlights
+          </h3>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 1.5rem;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.7);
+                padding: 1.5rem;
+                border-radius: 12px;
+                border-left: 4px solid var(--teal);
+                transition: all 0.3s ease;
+                backdrop-filter: blur(5px);
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="var(--teal)"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  style="margin-right: 0.8rem"
+                >
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span style="font-weight: 600; color: var(--dark)"
+                  >Discovery meetings & solution architecture</span
+                >
+              </div>
+            </div>
+
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.7);
+                padding: 1.5rem;
+                border-radius: 12px;
+                border-left: 4px solid var(--teal);
+                transition: all 0.3s ease;
+                backdrop-filter: blur(5px);
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="var(--teal)"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  style="margin-right: 0.8rem"
+                >
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span style="font-weight: 600; color: var(--dark)"
+                  >Salesforce integration services</span
+                >
+              </div>
+            </div>
+
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.7);
+                padding: 1.5rem;
+                border-radius: 12px;
+                border-left: 4px solid var(--teal);
+                transition: all 0.3s ease;
+                backdrop-filter: blur(5px);
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="var(--teal)"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  style="margin-right: 0.8rem"
+                >
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span style="font-weight: 600; color: var(--dark)"
+                  >Ongoing email and phone support from senior certified
+                  consultants</span
+                >
+              </div>
+            </div>
+
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.7);
+                padding: 1.5rem;
+                border-radius: 12px;
+                border-left: 4px solid var(--teal);
+                transition: all 0.3s ease;
+                backdrop-filter: blur(5px);
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="var(--teal)"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  style="margin-right: 0.8rem"
+                >
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span style="font-weight: 600; color: var(--dark)"
+                  >Comprehensive Salesforce training and "Train the Trainer"
+                  programs</span
+                >
+              </div>
+            </div>
+
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.7);
+                padding: 1.5rem;
+                border-radius: 12px;
+                border-left: 4px solid var(--teal);
+                transition: all 0.3s ease;
+                backdrop-filter: blur(5px);
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="var(--teal)"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  style="margin-right: 0.8rem"
+                >
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span style="font-weight: 600; color: var(--dark)"
+                  >Web conference and phone-based training sessions</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container" style="text-align: center;">
-            <h2 style="margin-bottom: 2.5rem; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 900; animation: fadeInUp 0.8s ease-out;">Ready to Join Our Success Stories?</h2>
-            <p style="font-size: clamp(1.1rem, 2.5vw, 1.6rem); margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto; animation: fadeInUp 0.8s ease-out 0.2s both;">Transform your organization with expert Salesforce consulting. Get your free assessment and join the ranks of satisfied clients.</p>
-            <a href="/contact/" class="btn-modern" style="font-size: 1.2rem; padding: 1.2rem 2.5rem; background: var(--white); color: var(--dark); border: none; border-radius: 12px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">Get Your Free Salesforce Assessment</a>
-        </div>
+      <div class="container" style="text-align: center">
+        <h2
+          style="
+            margin-bottom: 2.5rem;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            animation: fadeInUp 0.8s ease-out;
+          "
+        >
+          Ready to Join Our Success Stories?
+        </h2>
+        <p
+          style="
+            font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+          "
+        >
+          Transform your organization with expert Salesforce consulting. Get
+          your free assessment and join the ranks of satisfied clients.
+        </p>
+        <a
+          href="/contact/"
+          class="btn-modern"
+          style="
+            font-size: 1.2rem;
+            padding: 1.2rem 2.5rem;
+            background: var(--white);
+            color: var(--dark);
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          "
+          >Get Your Free Salesforce Assessment</a
+        >
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>SalesforceConsultants.io</h3>
-                    <p style="margin-bottom: 1rem;">A DevPipeline Division</p>
-                    <p>Expert Salesforce consulting services that lift people, advance careers, and strengthen communities through proven Salesforce implementation and optimization.</p>
-                    <div style="margin-top: 1rem;">
-                        <p>(385) 309-0807</p>
-                        <p>marketing@devpipeline.com</p>
-                        <p>www.salesforceconsultants.io</p>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Salesforce Services</h3>
-                    <ul>
-                        <li><a href="index.html#services">Salesforce Implementation</a></li>
-                        <li><a href="index.html#services">Custom Salesforce Development</a></li>
-                        <li><a href="index.html#services">Salesforce Training & Certification</a></li>
-                        <li><a href="index.html#services">Salesforce System Integration</a></li>
-                        <li><a href="index.html#services">Salesforce AI & Automation</a></li>
-                        <li><a href="index.html#services">Nonprofit Salesforce Solutions</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Industries We Serve</h3>
-                    <ul>
-                        <li>Nonprofit Organizations</li>
-                        <li>Chambers of Commerce</li>
-                        <li>Professional Associations</li>
-                        <li>Membership Organizations</li>
-                        <li>Professional Services</li>
-                        <li>B2B Service Companies</li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Our Salesforce Expertise</h3>
-                    <ul>
-                        <li>15+ Salesforce Certifications</li>
-                        <li>Salesforce Sales Cloud Implementation</li>
-                        <li>Salesforce Service Cloud Optimization</li>
-                        <li>Salesforce Marketing Cloud Setup</li>
-                        <li>Salesforce Nonprofit Cloud & NPSP</li>
-                        <li>Salesforce Enterprise Architecture</li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Connect With Us</h3>
-                    <p>Ready to transform your business with Salesforce?</p>
-                    <p>Contact us today for a free consultation and assessment.</p>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>SalesforceConsultants.io</h3>
+            <p style="margin-bottom: 1rem">A DevPipeline Division</p>
+            <p>
+              Expert Salesforce consulting services that lift people, advance
+              careers, and strengthen communities through proven Salesforce
+              implementation and optimization.
+            </p>
+            <div style="margin-top: 1rem">
+              <p>(385) 309-0807</p>
+              <p>marketing@devpipeline.com</p>
+              <p>www.salesforceconsultants.io</p>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 DevPipeline | SalesforceConsultants.io. All rights reserved. | 
-                            <a href="#" style="color: var(--accent-gold);">Privacy Policy</a> |
-            <a href="#" style="color: var(--accent-gold);">Terms of Service</a></p>
-                <p style="margin-top: 1rem; font-size: 0.9rem;">
-                    Salesforce, Sales Cloud, Service Cloud, Marketing Cloud, and other Salesforce products are trademarks of Salesforce.com, Inc. SalesforceConsultants.io is an independent Salesforce consulting firm.
-                </p>
-            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3>Salesforce Services</h3>
+            <ul>
+              <li>
+                <a href="index.html#services">Salesforce Implementation</a>
+              </li>
+              <li>
+                <a href="index.html#services">Custom Salesforce Development</a>
+              </li>
+              <li>
+                <a href="index.html#services"
+                  >Salesforce Training & Certification</a
+                >
+              </li>
+              <li>
+                <a href="index.html#services">Salesforce System Integration</a>
+              </li>
+              <li>
+                <a href="index.html#services">Salesforce AI & Automation</a>
+              </li>
+              <li>
+                <a href="index.html#services">Nonprofit Salesforce Solutions</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Industries We Serve</h3>
+            <ul>
+              <li>Nonprofit Organizations</li>
+              <li>Chambers of Commerce</li>
+              <li>Professional Associations</li>
+              <li>Membership Organizations</li>
+              <li>Professional Services</li>
+              <li>B2B Service Companies</li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Our Salesforce Expertise</h3>
+            <ul>
+              <li>15+ Salesforce Certifications</li>
+              <li>Salesforce Sales Cloud Implementation</li>
+              <li>Salesforce Service Cloud Optimization</li>
+              <li>Salesforce Marketing Cloud Setup</li>
+              <li>Salesforce Nonprofit Cloud & NPSP</li>
+              <li>Salesforce Enterprise Architecture</li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Connect With Us</h3>
+            <p>Ready to transform your business with Salesforce?</p>
+            <p>Contact us today for a free consultation and assessment.</p>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 DevPipeline | SalesforceConsultants.io. All rights
+            reserved. |
+            <a href="#" style="color: var(--accent-gold)">Privacy Policy</a> |
+            <a href="#" style="color: var(--accent-gold)">Terms of Service</a>
+          </p>
+          <p style="margin-top: 1rem; font-size: 0.9rem">
+            Salesforce, Sales Cloud, Service Cloud, Marketing Cloud, and other
+            Salesforce products are trademarks of Salesforce.com, Inc.
+            SalesforceConsultants.io is an independent Salesforce consulting
+            firm.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="/script.js?v=2025.1.20"></script>
-    
+    <script src="/script.js?v=2025.1.20" type="module"></script>
+
     <style>
-        .service-portfolio-highlights div[style*="background: rgba(255,255,255,0.7)"]:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.9) !important;
-            box-shadow: 0 10px 25px rgba(58, 175, 170, 0.2);
-            border-left-color: var(--teal) !important;
-        }
-        
-        .service-portfolio-highlights div[style*="background: rgba(255,255,255,0.7)"] {
-            animation: fadeInUp 0.6s ease-out;
-        }
-        
-        .service-portfolio-highlights div[style*="background: rgba(255,255,255,0.7)"]:nth-child(1) { animation-delay: 0.1s; }
-        .service-portfolio-highlights div[style*="background: rgba(255,255,255,0.7)"]:nth-child(2) { animation-delay: 0.2s; }
-        .service-portfolio-highlights div[style*="background: rgba(255,255,255,0.7)"]:nth-child(3) { animation-delay: 0.3s; }
-        .service-portfolio-highlights div[style*="background: rgba(255,255,255,0.7)"]:nth-child(4) { animation-delay: 0.4s; }
-        .service-portfolio-highlights div[style*="background: rgba(255,255,255,0.7)"]:nth-child(5) { animation-delay: 0.5s; }
+      .service-portfolio-highlights
+        div[style*="background: rgba(255,255,255,0.7)"]:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.9) !important;
+        box-shadow: 0 10px 25px rgba(58, 175, 170, 0.2);
+        border-left-color: var(--teal) !important;
+      }
+
+      .service-portfolio-highlights
+        div[style*="background: rgba(255,255,255,0.7)"] {
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      .service-portfolio-highlights
+        div[style*="background: rgba(255,255,255,0.7)"]:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .service-portfolio-highlights
+        div[style*="background: rgba(255,255,255,0.7)"]:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .service-portfolio-highlights
+        div[style*="background: rgba(255,255,255,0.7)"]:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .service-portfolio-highlights
+        div[style*="background: rgba(255,255,255,0.7)"]:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .service-portfolio-highlights
+        div[style*="background: rgba(255,255,255,0.7)"]:nth-child(5) {
+        animation-delay: 0.5s;
+      }
     </style>
-</body>
-</html> 
+  </body>
+</html>

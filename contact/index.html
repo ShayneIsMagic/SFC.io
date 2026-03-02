@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Contact Salesforce Consultants | California, Missouri, Kansas, Utah | Free Assessment
+      Contact Salesforce Consultants | California, Missouri, Kansas, Utah | Free
+      Assessment
     </title>
     <meta
       name="description"
@@ -65,15 +66,12 @@
       content="https://salesforceconsultants.io/assets/SalesforceConsultants-Graphic.png"
     />
 
-    <link
-      rel="canonical"
-      href="https://salesforceconsultants.io/contact/"
-    />
+    <link rel="canonical" href="https://salesforceconsultants.io/contact/" />
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <link rel="stylesheet" href="/styles.css?v=2024.1.24" />
-    <link rel="stylesheet" href="/components.css?v=2025.1.20">
+    <link rel="stylesheet" href="/components.css?v=2025.1.20" />
 
     <style>
       .contact-hero {
@@ -277,6 +275,13 @@
         letter-spacing: 0.5px;
       }
 
+      .form-group input::placeholder,
+      .form-group select::placeholder,
+      .form-group textarea::placeholder,
+      select:has(option[value=""]:checked) {
+        color: #999;
+      }
+
       .form-group input,
       .form-group select,
       .form-group textarea {
@@ -289,6 +294,7 @@
         background: var(--white);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         position: relative;
+        scroll-margin-top: 130px;
       }
 
       .form-group input:hover,
@@ -303,7 +309,8 @@
       .form-group textarea:focus {
         outline: none;
         border-color: var(--primary-teal);
-        box-shadow: 0 0 0 4px rgba(58, 175, 170, 0.1),
+        box-shadow:
+          0 0 0 4px rgba(58, 175, 170, 0.1),
           0 4px 12px rgba(0, 0, 0, 0.1);
         transform: translateY(-2px);
       }
@@ -311,17 +318,18 @@
       .form-group textarea {
         resize: vertical;
         min-height: 120px;
-        font-family: "Oceanwide Pro", -apple-system, BlinkMacSystemFont,
-          "Segoe UI", Roboto, sans-serif;
+        font-family:
+          "Oceanwide Pro",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
       }
 
-      .form-group select {
-        cursor: pointer;
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-        background-position: right 0.75rem center;
-        background-repeat: no-repeat;
-        background-size: 1.5em 1.5em;
-        padding-right: 2.5rem;
+      .g-recaptcha > div {
+        margin: auto;
+        margin-bottom: 32px;
       }
 
       .required-field::after {
@@ -374,6 +382,14 @@
 
       .submit-btn:active {
         transform: translateY(-1px);
+      }
+
+      .submit-btn:disabled {
+        transform: unset;
+        background: var(--white);
+        opacity: 30%;
+        cursor: not-allowed;
+        box-shadow: unset;
       }
 
       .contact-info {
@@ -540,7 +556,7 @@
       }
 
       .faq-answer p {
-        color: var(--text-light);
+        color: var(--dark-light);
         line-height: 1.7;
         margin-bottom: 1rem;
       }
@@ -658,6 +674,7 @@
         }
       }
     </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
     <header>
@@ -880,7 +897,7 @@
         </div>
 
         <div class="contact-form">
-          <form id="contact-form">
+          <form id="contact-form" style="scroll-margin-top: 100px">
             <div class="form-header">
               <h3>Start Your Salesforce Journey</h3>
               <p>Get your free assessment and customized roadmap</p>
@@ -888,12 +905,14 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label for="first_name">First Name *</label>
+                <label for="first_name" class="required-field"
+                  >First Name</label
+                >
                 <input type="text" id="first_name" name="first_name" required />
               </div>
 
               <div class="form-group">
-                <label for="last_name">Last Name *</label>
+                <label for="last_name" class="required-field">Last Name</label>
                 <input type="text" id="last_name" name="last_name" required />
               </div>
             </div>
@@ -912,7 +931,7 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label for="phone">Phone Number</label>
+                <label for="phone" class="required-field">Phone Number</label>
                 <input
                   type="tel"
                   id="phone"
@@ -948,7 +967,9 @@
                   name="organization_type"
                   required
                 >
-                  <option value="">Select Organization Type</option>
+                  <option value="" selected disabled>
+                    Select Organization Type
+                  </option>
                   <option value="nonprofit">Nonprofit Organization</option>
                   <option value="chamber">Chamber of Commerce</option>
                   <option value="association">Professional Association</option>
@@ -967,7 +988,9 @@
                   name="current_salesforce"
                   required
                 >
-                  <option value="">Select Current Salesforce Status</option>
+                  <option value="" disabled selected>
+                    Select Current Salesforce Status
+                  </option>
                   <option value="no_salesforce">Not using Salesforce</option>
                   <option value="basic_setup">Basic Salesforce setup</option>
                   <option value="partial_implementation">
@@ -989,7 +1012,9 @@
                   >Primary Salesforce Need</label
                 >
                 <select id="primary_need" name="primary_need" required>
-                  <option value="">Select Primary Salesforce Need</option>
+                  <option value="" selected disabled>
+                    Select Primary Salesforce Need
+                  </option>
                   <option value="new_implementation">
                     New Salesforce Implementation
                   </option>
@@ -1043,12 +1068,23 @@
 
             <input type="hidden" name="page" value="Contact" />
 
-            <button type="submit" class="submit-btn">
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LeQA2IsAAAAAIBNcEbMqrLMcjPdTrhOnQgD3pcl"
+              data-callback="recaptchaDataCallback"
+              data-expired-callback="recaptchaExpiredCallback"
+            ></div>
+
+            <button type="button" id="submit-btn" class="submit-btn">
               <span>Get My Free Salesforce Assessment</span>
             </button>
           </form>
 
-          <div class="contact-info">
+          <div
+            id="contact-info"
+            class="contact-info"
+            style="scroll-margin-top: 100px"
+          >
             <h3>Prefer to Talk Directly?</h3>
             <p>
               Schedule a 30-minute Salesforce consultation to discuss your
@@ -1451,7 +1487,7 @@
       </div>
     </footer>
 
-    <script src="/script.js?v=2025.1.20"></script>
+    <script src="/script.js?v=2025.1.20" type="module"></script>
     <script>
       function toggleFAQ(element) {
         const allFAQItems = document.querySelectorAll(".faq-item");
@@ -1486,6 +1522,6 @@
         });
       });
     </script>
-    <script src="/scripts/sendEmail.js" type="text/javascript"></script>
+    <script src="/scripts/sendEmail.js" type="module"></script>
   </body>
 </html>
