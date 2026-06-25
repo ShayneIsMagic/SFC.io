@@ -188,7 +188,7 @@ function initializeSite() {
   initializeBioModal();
 
   // Initialize exit intent popup
-  initializeExitIntentPopup();
+  // initializeExitIntentPopup();
 
   console.log("✅ Site initialization complete");
 }
