@@ -1,6 +1,8 @@
 import { showNotification, validateForm } from "../script.js";
 
 document.addEventListener("DOMContentLoaded", function () {
+  return; // Contact form disabled
+
   const form = document.getElementById("contact-form");
   if (!form) {
     console.error("Contact form not found.");
